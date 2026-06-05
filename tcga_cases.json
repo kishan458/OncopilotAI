@@ -1,0 +1,4602 @@
+[
+  {
+    "patient_id": "TCGA-44-2655",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 16
+    },
+    "genomics": {
+      "driver_mutation": "ALK Fusion",
+      "secondary_mutation": "None",
+      "tmb": 7.9,
+      "pdl1_percent": 67,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Alectinib 600mg PO BID",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 28,
+      "PFS_months": 24
+    }
+  },
+  {
+    "patient_id": "TCGA-73-4662",
+    "pathology": {
+      "subtype": "Infiltrating duct carcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 16
+    },
+    "genomics": {
+      "driver_mutation": "ALK Fusion",
+      "secondary_mutation": "STK11",
+      "tmb": 4.4,
+      "pdl1_percent": 87,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1c",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage I",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Alectinib 600mg PO BID",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 22,
+      "PFS_months": 10
+    }
+  },
+  {
+    "patient_id": "TCGA-44-7671",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 35
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 10.2,
+      "pdl1_percent": 65,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 64,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 42,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-78-8660",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "STK11",
+      "tmb": 14.2,
+      "pdl1_percent": 66,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 10,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-55-6978",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 12.6,
+      "pdl1_percent": 34,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 81,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 5,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-J2-8192",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 8.1,
+      "pdl1_percent": 40,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N1",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 34,
+      "PFS_months": 27
+    }
+  },
+  {
+    "patient_id": "TCGA-80-5611",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 32
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "None",
+      "tmb": 12.9,
+      "pdl1_percent": 21,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": null,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 21,
+      "PFS_months": 9
+    }
+  },
+  {
+    "patient_id": "TCGA-93-8067",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 32
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 11.4,
+      "pdl1_percent": 29,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 77,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 25,
+      "PFS_months": 21
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4418",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "STK11",
+      "tmb": 13.9,
+      "pdl1_percent": 24,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 9,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-67-6217",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 34
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 6.0,
+      "pdl1_percent": 6,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 73,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 36,
+      "PFS_months": 23
+    }
+  },
+  {
+    "patient_id": "TCGA-49-6745",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 7.5,
+      "pdl1_percent": 18,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 82,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 25,
+      "PFS_months": 21
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8091",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "TP53",
+      "tmb": 4.2,
+      "pdl1_percent": 67,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 74,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 37,
+      "PFS_months": 28
+    }
+  },
+  {
+    "patient_id": "TCGA-38-7271",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 42
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 9.8,
+      "pdl1_percent": 86,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 26,
+      "PFS_months": 19
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7914",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 26
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 7.2,
+      "pdl1_percent": 8,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N1",
+      "m_stage": "MX",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 71,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 6,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-55-1595",
+    "pathology": {
+      "subtype": "Infiltrating duct carcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 19
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 10.5,
+      "pdl1_percent": 68,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1c",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 74,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 40,
+      "PFS_months": 27
+    }
+  },
+  {
+    "patient_id": "TCGA-73-4658",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 34
+    },
+    "genomics": {
+      "driver_mutation": "ALK Fusion",
+      "secondary_mutation": "TP53",
+      "tmb": 13.8,
+      "pdl1_percent": 40,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 80,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Alectinib 600mg PO BID",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 52,
+      "PFS_months": 41
+    }
+  },
+  {
+    "patient_id": "TCGA-38-4630",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 7.9,
+      "pdl1_percent": 30,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 75,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 35,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-55-1592",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 10.5,
+      "pdl1_percent": 76,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 23,
+      "PFS_months": 12
+    }
+  },
+  {
+    "patient_id": "TCGA-55-1594",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 6.4,
+      "pdl1_percent": 100,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N2",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 68,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 26,
+      "PFS_months": 21
+    }
+  },
+  {
+    "patient_id": "TCGA-67-3776",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "None",
+      "tmb": 13.4,
+      "pdl1_percent": 70,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 57,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 35,
+      "PFS_months": 24
+    }
+  },
+  {
+    "patient_id": "TCGA-95-7043",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 22
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 9.4,
+      "pdl1_percent": 41,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1a",
+      "n_stage": "NX",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 63,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 16,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-86-8076",
+    "pathology": {
+      "subtype": "Papillary adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 18
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "None",
+      "tmb": 11.4,
+      "pdl1_percent": 30,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 42,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 25,
+      "PFS_months": 11
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4245",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 59
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "STK11",
+      "tmb": 14.0,
+      "pdl1_percent": 83,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 81,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 23,
+      "PFS_months": 15
+    }
+  },
+  {
+    "patient_id": "TCGA-44-2661",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 18
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 13.1,
+      "pdl1_percent": 80,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 21,
+      "PFS_months": 12
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8619",
+    "pathology": {
+      "subtype": "Mucinous adenocarcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 57
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 4.3,
+      "pdl1_percent": 99,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 38,
+      "PFS_months": 31
+    }
+  },
+  {
+    "patient_id": "TCGA-78-7166",
+    "pathology": {
+      "subtype": "Basal cell carcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 38
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 15.0,
+      "pdl1_percent": 20,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 84,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 8,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-38-4631",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 35
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 6.4,
+      "pdl1_percent": 76,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 11,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-73-4670",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 8.1,
+      "pdl1_percent": 88,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M1",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "Bone"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IV",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 41,
+      "PFS_months": 30
+    }
+  },
+  {
+    "patient_id": "TCGA-49-6742",
+    "pathology": {
+      "subtype": "Mucinous adenocarcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 33
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 13.9,
+      "pdl1_percent": 71,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 70,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 16,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7726",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 23
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "None",
+      "tmb": 11.9,
+      "pdl1_percent": 79,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 30,
+      "PFS_months": 18
+    }
+  },
+  {
+    "patient_id": "TCGA-50-5932",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 19
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "TP53",
+      "tmb": 12.6,
+      "pdl1_percent": 40,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 75,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 40,
+      "PFS_months": 27
+    }
+  },
+  {
+    "patient_id": "TCGA-55-1596",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 35
+    },
+    "genomics": {
+      "driver_mutation": "ROS1 Fusion",
+      "secondary_mutation": "None",
+      "tmb": 14.4,
+      "pdl1_percent": 80,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 55,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Entrectinib 600mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 40,
+      "PFS_months": 33
+    }
+  },
+  {
+    "patient_id": "TCGA-44-6147",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 18
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 5.0,
+      "pdl1_percent": 30,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "NX",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 20,
+      "PFS_months": 14
+    }
+  },
+  {
+    "patient_id": "TCGA-50-6597",
+    "pathology": {
+      "subtype": "Carcinoid tumor, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 14.2,
+      "pdl1_percent": 4,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 79,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 41,
+      "PFS_months": 30
+    }
+  },
+  {
+    "patient_id": "TCGA-44-7661",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 33
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 10.1,
+      "pdl1_percent": 91,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 18,
+      "PFS_months": 11
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4384",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 41
+    },
+    "genomics": {
+      "driver_mutation": "ALK Fusion",
+      "secondary_mutation": "TP53",
+      "tmb": 13.7,
+      "pdl1_percent": 14,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 66,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Alectinib 600mg PO BID",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 38,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-44-2659",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 23
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 12.0,
+      "pdl1_percent": 93,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 23,
+      "PFS_months": 9
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8511",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 38
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 6.0,
+      "pdl1_percent": 66,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 73,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 35,
+      "PFS_months": 24
+    }
+  },
+  {
+    "patient_id": "TCGA-44-6776",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 22
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 16.1,
+      "pdl1_percent": 20,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 60,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 26,
+      "PFS_months": 20
+    }
+  },
+  {
+    "patient_id": "TCGA-80-5607",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 34
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "STK11",
+      "tmb": 12.4,
+      "pdl1_percent": 91,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": null,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 42,
+      "PFS_months": 34
+    }
+  },
+  {
+    "patient_id": "TCGA-50-5072",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "TP53",
+      "tmb": 14.2,
+      "pdl1_percent": 2,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 74,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 8,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4396",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 73
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "None",
+      "tmb": 12.8,
+      "pdl1_percent": 86,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Solid",
+      "t_stage": "T4",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 76,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 9,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-95-7948",
+    "pathology": {
+      "subtype": "Hodgkin lymphoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "None",
+      "tmb": 13.7,
+      "pdl1_percent": 65,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 42,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 21,
+      "PFS_months": 16
+    }
+  },
+  {
+    "patient_id": "TCGA-95-7562",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "None",
+      "tmb": 4.7,
+      "pdl1_percent": 71,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 71,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 2,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8090",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 8.9,
+      "pdl1_percent": 38,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 80,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 19,
+      "PFS_months": 14
+    }
+  },
+  {
+    "patient_id": "TCGA-73-7498",
+    "pathology": {
+      "subtype": "Bronchiolo-alveolar carcinoma, non-mucinous",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 26
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 10.5,
+      "pdl1_percent": 78,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 58,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 32,
+      "PFS_months": 21
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7725",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 11.0,
+      "pdl1_percent": 12,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 68,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 29,
+      "PFS_months": 17
+    }
+  },
+  {
+    "patient_id": "TCGA-05-5420",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 7.9,
+      "pdl1_percent": 31,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M1",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "Bone"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 30,
+      "PFS_months": 25
+    }
+  },
+  {
+    "patient_id": "TCGA-38-4629",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 52
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "STK11",
+      "tmb": 15.5,
+      "pdl1_percent": 91,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 68,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 28,
+      "PFS_months": 17
+    }
+  },
+  {
+    "patient_id": "TCGA-67-3770",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 23
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "None",
+      "tmb": 16.3,
+      "pdl1_percent": 27,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 70,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 36,
+      "PFS_months": 25
+    }
+  },
+  {
+    "patient_id": "TCGA-73-4676",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 13.5,
+      "pdl1_percent": 28,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 45,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 9,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-95-7947",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 16
+    },
+    "genomics": {
+      "driver_mutation": "ROS1 Fusion",
+      "secondary_mutation": "STK11",
+      "tmb": 15.2,
+      "pdl1_percent": 73,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Entrectinib 600mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 27,
+      "PFS_months": 16
+    }
+  },
+  {
+    "patient_id": "TCGA-97-8172",
+    "pathology": {
+      "subtype": "Acinar cell carcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "TP53",
+      "tmb": 5.3,
+      "pdl1_percent": 44,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 75,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 39,
+      "PFS_months": 34
+    }
+  },
+  {
+    "patient_id": "TCGA-44-6146",
+    "pathology": {
+      "subtype": "Mucinous adenocarcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 8.8,
+      "pdl1_percent": 88,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 64,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 42,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4410",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 16.0,
+      "pdl1_percent": 98,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 62,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 21,
+      "PFS_months": 17
+    }
+  },
+  {
+    "patient_id": "TCGA-91-6836",
+    "pathology": {
+      "subtype": "Papillary adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "TP53",
+      "tmb": 15.5,
+      "pdl1_percent": 88,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 52,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 31,
+      "PFS_months": 26
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7724",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 35
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 15.8,
+      "pdl1_percent": 74,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 76,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 25,
+      "PFS_months": 13
+    }
+  },
+  {
+    "patient_id": "TCGA-55-6979",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 38
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 14.4,
+      "pdl1_percent": 39,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 59,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 7,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4382",
+    "pathology": {
+      "subtype": "Carcinoma in situ, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 37
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "STK11",
+      "tmb": 11.7,
+      "pdl1_percent": 77,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 68,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 19,
+      "PFS_months": 13
+    }
+  },
+  {
+    "patient_id": "TCGA-50-5939",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 5.4,
+      "pdl1_percent": 14,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 85,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 15,
+      "PFS_months": 11
+    }
+  },
+  {
+    "patient_id": "TCGA-78-7633",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 32
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 10.9,
+      "pdl1_percent": 16,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 50,
+      "PFS_months": 38
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7573",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 24
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "None",
+      "tmb": 9.3,
+      "pdl1_percent": 28,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 18,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4405",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 42
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "None",
+      "tmb": 4.1,
+      "pdl1_percent": 40,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 74,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 18,
+      "PFS_months": 9
+    }
+  },
+  {
+    "patient_id": "TCGA-91-7771",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 53
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 11.1,
+      "pdl1_percent": 91,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 62,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 23,
+      "PFS_months": 19
+    }
+  },
+  {
+    "patient_id": "TCGA-64-1677",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 33
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 10.1,
+      "pdl1_percent": 31,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 77,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 20,
+      "PFS_months": 11
+    }
+  },
+  {
+    "patient_id": "TCGA-38-6178",
+    "pathology": {
+      "subtype": "Granulosa cell tumor, malignant",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 33
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "None",
+      "tmb": 6.2,
+      "pdl1_percent": 42,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 70,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 35,
+      "PFS_months": 24
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4434",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 8.4,
+      "pdl1_percent": 19,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 15,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-44-2664",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "ALK Fusion",
+      "secondary_mutation": "STK11",
+      "tmb": 13.7,
+      "pdl1_percent": 39,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 66,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Alectinib 600mg PO BID",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 29,
+      "PFS_months": 19
+    }
+  },
+  {
+    "patient_id": "TCGA-44-7670",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 10.3,
+      "pdl1_percent": 27,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 47,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 28,
+      "PFS_months": 15
+    }
+  },
+  {
+    "patient_id": "TCGA-49-4501",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 38
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "None",
+      "tmb": 4.4,
+      "pdl1_percent": 93,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 46,
+      "PFS_months": 34
+    }
+  },
+  {
+    "patient_id": "TCGA-MP-A4T9",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 42
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "STK11",
+      "tmb": 6.2,
+      "pdl1_percent": 37,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 54,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 41,
+      "PFS_months": 33
+    }
+  },
+  {
+    "patient_id": "TCGA-44-8119",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 56
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 14.6,
+      "pdl1_percent": 34,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 73,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 19,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-50-5935",
+    "pathology": {
+      "subtype": "Not Reported",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 4.3,
+      "pdl1_percent": 35,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 86,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 21,
+      "PFS_months": 10
+    }
+  },
+  {
+    "patient_id": "TCGA-62-8394",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 72
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 11.8,
+      "pdl1_percent": 97,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T4",
+      "n_stage": "N2",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 65,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 4,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-05-4402",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 37
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 13.7,
+      "pdl1_percent": 79,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "NX",
+      "m_stage": "M1",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "Bone"
+      ]
+    },
+    "clinical": {
+      "age": 56,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IV",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 8,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-MN-A4N1",
+    "pathology": {
+      "subtype": "Squamous cell carcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 41
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 13.6,
+      "pdl1_percent": 66,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 60,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage II",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 33,
+      "PFS_months": 23
+    }
+  },
+  {
+    "patient_id": "TCGA-44-3917",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 33
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 10.2,
+      "pdl1_percent": 68,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 33,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 39,
+      "PFS_months": 31
+    }
+  },
+  {
+    "patient_id": "TCGA-64-5775",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 76
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 11.2,
+      "pdl1_percent": 19,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T4",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 71,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 2,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8203",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 16
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 13.5,
+      "pdl1_percent": 44,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 69,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 24,
+      "PFS_months": 13
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8621",
+    "pathology": {
+      "subtype": "Clear cell carcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 42
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 11.4,
+      "pdl1_percent": 95,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 75,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 40,
+      "PFS_months": 26
+    }
+  },
+  {
+    "patient_id": "TCGA-17-Z003",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 37
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 6.9,
+      "pdl1_percent": 15,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 36,
+      "PFS_months": 28
+    }
+  },
+  {
+    "patient_id": "TCGA-69-7761",
+    "pathology": {
+      "subtype": "Acinar cell carcinoma",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 41
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 6.0,
+      "pdl1_percent": 92,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 84,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 31,
+      "PFS_months": 21
+    }
+  },
+  {
+    "patient_id": "TCGA-62-A471",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 9.6,
+      "pdl1_percent": 32,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2b",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 64,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 36,
+      "PFS_months": 28
+    }
+  },
+  {
+    "patient_id": "TCGA-17-Z059",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 8.0,
+      "pdl1_percent": 92,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 59,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 27,
+      "PFS_months": 15
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7903",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 22
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 15.5,
+      "pdl1_percent": 12,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 64,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 39,
+      "PFS_months": 35
+    }
+  },
+  {
+    "patient_id": "TCGA-91-6848",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "None",
+      "tmb": 8.7,
+      "pdl1_percent": 28,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N2",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 59,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 39,
+      "PFS_months": 27
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8208",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 23
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "None",
+      "tmb": 14.6,
+      "pdl1_percent": 73,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 73,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 42,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-86-6851",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 20
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 13.2,
+      "pdl1_percent": 69,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1b",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 73,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 21,
+      "PFS_months": 17
+    }
+  },
+  {
+    "patient_id": "TCGA-62-A46U",
+    "pathology": {
+      "subtype": "Adenocarcinoma with mixed subtypes",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 36
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "TP53",
+      "tmb": 5.7,
+      "pdl1_percent": 97,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 71,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 37,
+      "PFS_months": 29
+    }
+  },
+  {
+    "patient_id": "TCGA-78-7540",
+    "pathology": {
+      "subtype": "Bronchio-alveolar carcinoma, mucinous",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 4.9,
+      "pdl1_percent": 30,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 66,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 39,
+      "PFS_months": 27
+    }
+  },
+  {
+    "patient_id": "TCGA-50-5933",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 76
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 9.2,
+      "pdl1_percent": 3,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T4",
+      "n_stage": "N2",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 78,
+      "PFS_months": 65
+    }
+  },
+  {
+    "patient_id": "TCGA-55-8615",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 40
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "TP53",
+      "tmb": 15.9,
+      "pdl1_percent": 14,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 67,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 25,
+      "PFS_months": 20
+    }
+  },
+  {
+    "patient_id": "TCGA-17-Z055",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 41
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "STK11",
+      "tmb": 10.2,
+      "pdl1_percent": 95,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 72,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 37,
+      "PFS_months": 23
+    }
+  },
+  {
+    "patient_id": "TCGA-86-7954",
+    "pathology": {
+      "subtype": "Bronchiolo-alveolar adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 34
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "TP53",
+      "tmb": 7.0,
+      "pdl1_percent": 12,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Right Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 68,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 41,
+      "PFS_months": 35
+    }
+  },
+  {
+    "patient_id": "TCGA-49-4505",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 43
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12C",
+      "secondary_mutation": "None",
+      "tmb": 10.9,
+      "pdl1_percent": 81,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 61,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "Hypertension"
+      ]
+    },
+    "treatment_history": "Sotorasib 960mg PO QD",
+    "guideline_citation": "NCCN NSCLC v3.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 14,
+      "PFS_months": 6
+    }
+  },
+  {
+    "patient_id": "TCGA-J2-A4AD",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 31
+    },
+    "genomics": {
+      "driver_mutation": "KRAS G12V",
+      "secondary_mutation": "STK11",
+      "tmb": 8.5,
+      "pdl1_percent": 82,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Right Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 61,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 18,
+      "PFS_months": 9
+    }
+  },
+  {
+    "patient_id": "TCGA-50-6592",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 42
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "TP53",
+      "tmb": 7.1,
+      "pdl1_percent": 38,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2",
+      "n_stage": "N0",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 71,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Cisplatin 75 mg/m\u00b2 + Pemetrexed 500 mg/m\u00b2",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 25,
+      "PFS_months": 13
+    }
+  },
+  {
+    "patient_id": "TCGA-86-8674",
+    "pathology": {
+      "subtype": "Papillary adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 39
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 19 del",
+      "secondary_mutation": "None",
+      "tmb": 7.4,
+      "pdl1_percent": 9,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Upper Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T2a",
+      "n_stage": "N1",
+      "m_stage": "M0",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 50,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 32,
+      "PFS_months": 19
+    }
+  },
+  {
+    "patient_id": "TCGA-55-6981",
+    "pathology": {
+      "subtype": "Adenocarcinoma, NOS",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Positive (R1)",
+      "tumor_size_mm": 16
+    },
+    "genomics": {
+      "driver_mutation": "EGFR exon 21 L858R",
+      "secondary_mutation": "TP53",
+      "tmb": 11.4,
+      "pdl1_percent": 87,
+      "cnv": "Diploid"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Part-Solid",
+      "t_stage": "T1",
+      "n_stage": "N2",
+      "m_stage": "M0",
+      "pleural_invasion": false,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 53,
+      "sex": "Female",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 0,
+      "stage": "Stage IIIA",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "COPD"
+      ]
+    },
+    "treatment_history": "Osimertinib 80mg PO QD",
+    "guideline_citation": "NCCN NSCLC v2.2026 Cat 1",
+    "outcome": {
+      "response": "Complete Response",
+      "OS_months": 45,
+      "PFS_months": 37
+    }
+  },
+  {
+    "patient_id": "TCGA-55-7284",
+    "pathology": {
+      "subtype": "Bronchiolo-alveolar carcinoma, non-mucinous",
+      "tumor_grade": "G2",
+      "mitotic_index": "Low",
+      "surgical_margin": "Negative",
+      "tumor_size_mm": 54
+    },
+    "genomics": {
+      "driver_mutation": "Wild-Type",
+      "secondary_mutation": "STK11",
+      "tmb": 7.7,
+      "pdl1_percent": 94,
+      "cnv": "Amplified"
+    },
+    "imaging": {
+      "lobe": "Left Lower Lobe",
+      "density": "Solid",
+      "t_stage": "T3",
+      "n_stage": "N0",
+      "m_stage": "MX",
+      "pleural_invasion": true,
+      "metastasis_sites": [
+        "None"
+      ]
+    },
+    "clinical": {
+      "age": 74,
+      "sex": "Male",
+      "smoking_history": "Current Smoker",
+      "ecog_status": 1,
+      "stage": "Stage IIB",
+      "prior_lines": 0,
+      "co_morbidities": [
+        "None"
+      ]
+    },
+    "treatment_history": "Pembrolizumab 200mg IV Q3W + Pemetrexed + Carboplatin",
+    "guideline_citation": "NCCN NSCLC v2.2026",
+    "outcome": {
+      "response": "Partial Response",
+      "OS_months": 7,
+      "PFS_months": 6
+    }
+  }
+]

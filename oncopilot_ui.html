@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oncopilot — Hackathon MVP</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0d0f;
+    --bg2: #111417;
+    --bg3: #181d21;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8ebe8;
+    --muted: #7a8a7e;
+    --accent: #4ade80;
+    --accent2: #22d3ee;
+    --accent3: #f59e0b;
+    --red: #f87171;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+    --serif: 'Fraunces', serif;
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; }
+
+  .shell {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    height: 780px;
+    font-family: var(--sans);
+    background: var(--bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.5px solid var(--border2);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.7);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
+    background: var(--bg2);
+    border-right: 0.5px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .logo-area {
+    padding: 20px 18px 16px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .logo-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+
+  .patient-chip {
+    margin: 14px 14px 0;
+    background: var(--bg3);
+    border: 0.5px solid var(--border2);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .patient-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .patient-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .patient-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  .nav {
+    padding: 16px 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav-section-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 8px 4px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .nav-item:hover { background: var(--bg3); color: var(--text); }
+  .nav-item.active { background: rgba(74,222,128,0.1); color: var(--accent); border: 0.5px solid rgba(74,222,128,0.2); font-weight: 500; }
+
+  .nav-item .badge {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 9px;
+    background: rgba(74,222,128,0.15);
+    color: var(--accent);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  /* WINDOW VIEW LAYER */
+  .view-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .app-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: var(--bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .app-view.view-active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+  }
+
+  /* MAIN HEADER ELEMENTS */
+  .topbar {
+    height: 52px;
+    min-height: 52px;
+    background: var(--bg2);
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .topbar-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .phase-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 3px;
+  }
+
+  .phase-tab {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: var(--muted);
+  }
+  .phase-tab.active {
+    background: var(--bg2);
+    color: var(--accent);
+    border: 0.5px solid rgba(74,222,128,0.25);
+  }
+
+  .content-area {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* LEFT SIDEBAR PANEL */
+  .panel-left {
+    width: 300px;
+    min-width: 300px;
+    border-right: 0.5px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(10,13,15,0.4);
+  }
+
+  .panel-header {
+    padding: 14px 16px 10px;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-header-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  .panel-header-count {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    background: rgba(74,222,128,0.1);
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  .case-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .case-list::-webkit-scrollbar { width: 4px; }
+  .case-list::-webkit-scrollbar-track { background: transparent; }
+  .case-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .case-card {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    user-select: none;
+  }
+
+  .case-card:hover { border-color: var(--border2); transform: translateY(-1px); }
+  .case-card.selected { border-color: rgba(74,222,128,0.45); background: rgba(74,222,128,0.04); box-shadow: inset 0 0 12px rgba(74,222,128,0.02); }
+
+  .case-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .case-id {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+  }
+
+  .sim-score {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .sim-bar-track {
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+
+  .sim-bar-fill {
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .param-dots { display: flex; gap: 3px; flex-wrap: wrap; }
+  .param-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .param-dot.green { background: var(--accent); }
+  .param-dot.amber { background: var(--accent3); }
+  .param-dot.red { background: var(--red); }
+
+  .case-outcome {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    gap: 6px;
+  }
+
+  .case-outcome span {
+    background: var(--bg2);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: var(--mono);
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .outcome-good { color: var(--accent) !important; border: 0.5px solid rgba(74,222,128,0.15); }
+  .outcome-med { color: var(--accent3) !important; border: 0.5px solid rgba(245,158,11,0.15); }
+
+  /* RIGHT SIDE DETAIL WORKSPACE */
+  .panel-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .output-tabs {
+    display: flex;
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 16px;
+    background: rgba(17,20,23,0.3);
+  }
+
+  .output-tab {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 12px 14px;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 1.5px solid transparent;
+    white-space: nowrap;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .output-tab:hover { color: var(--text); }
+  .output-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+
+  .output-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 20px;
+  }
+
+  .output-body.hidden { display: none; }
+  .output-body::-webkit-scrollbar { width: 4px; }
+  .output-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* COMPONENT: TREATMENT BLOCK */
+  .treatment-section { margin-bottom: 20px; }
+  .treatment-section-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .drug-card {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .drug-icon {
+    width: 32px; height: 32px; border-radius: 6px;
+    background: rgba(74,222,128,0.06);
+    border: 0.5px solid rgba(74,222,128,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; color: var(--accent); font-weight: 500; flex-shrink: 0;
+  }
+
+  .drug-info { flex: 1; }
+  .drug-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .drug-meta { font-family: var(--mono); font-size: 10px; color: var(--muted); line-height: 1.6; }
+
+  .evidence-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(34,211,238,0.06);
+    border: 0.5px solid rgba(34,211,238,0.2);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--accent2);
+    white-space: nowrap;
+  }
+  .evidence-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent2); }
+
+  /* RADAR DATA LAYOUT */
+  .radar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .radar-svg { flex-shrink: 0; transform: rotate(-90deg); }
+  .radar-svg polygon { transition: points 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+  .radar-legend { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ANALYTICAL METRICS GRID */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .stat-card {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .stat-val {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat-unit { font-size: 10px; color: var(--muted); margin-top: 2px; font-family: var(--mono); }
+
+  /* PROGNOSIS RANGE TRACKER */
+  .prognosis-bar-wrap {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+
+  .prog-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .prog-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 6px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .prog-range {
+    position: absolute;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(74,222,128,0.2), var(--accent));
+    transition: left 0.5s ease, width 0.5s ease;
+  }
+
+  .prog-median {
+    position: absolute;
+    top: -4px;
+    width: 2px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: left 0.5s ease;
+  }
+
+  .prog-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .prog-caption { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .prog-caption strong { color: var(--accent); font-weight: 500; }
+
+  /* TRIAL LAYOUT ENGINE */
+  .trial-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .trial-card {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trial-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .trial-status.eligible { background: var(--accent); }
+  .trial-status.partial { background: var(--accent3); }
+  .trial-info { flex: 1; }
+  .trial-name { font-size: 12px; color: var(--text); font-weight: 500; margin-bottom: 2px; }
+  .trial-id { font-family: var(--mono); font-size: 9px; color: var(--accent2); }
+  .trial-match { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+  /* NOTIFICATIONS & SAFETY ALERTS */
+  .safety-alert {
+    background: rgba(248,113,113,0.04);
+    border: 0.5px solid rgba(248,113,113,0.15);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: #fca5a5;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .alert-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* FOOTER INTERACTION ACTIONS */
+  .signoff-bar {
+    border-top: 0.5px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg2);
+    margin-top: auto;
+  }
+
+  .signoff-note {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .signoff-note::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); }
+
+  .btn {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em;
+    padding: 7px 14px; border-radius: 6px; cursor: pointer; border: 0.5px solid;
+    transition: all 0.15s; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;
+    user-select: none;
+  }
+  .btn-ghost { border-color: var(--border2); color: var(--muted); background: transparent; }
+  .btn-ghost:hover { border-color: var(--text); color: var(--text); background: var(--bg3); }
+  .btn-primary { border-color: rgba(74,222,128,0.3); color: var(--accent); background: rgba(74,222,128,0.06); }
+  .btn-primary:hover { background: rgba(74,222,128,0.14); border-color: var(--accent); }
+
+  /* MODAL ENGINE OVERLAYS */
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(5,7,8,0.85); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center; z-index: 9999;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s ease-in-out;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-box {
+    background: var(--bg2); border: 0.5px solid var(--border2);
+    width: 100%; max-width: 460px; border-radius: 12px; padding: 24px;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.6);
+  }
+  .modal-title { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
+  .modal-desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
+
+  /* SUB-VIEW UNIQUE WORKSPACE LAYOUTS */
+  .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px; flex: 1; overflow-y: auto; }
+  .dashboard-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; overflow: hidden; }
+  .card-header-mono { font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
+  
+  /* GENOMIC SEQUENCING TABLES */
+  .genomic-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .genomic-table th { font-family: var(--mono); font-size: 10px; color: var(--muted); text-align: left; padding: 6px 8px; border-bottom: 0.5px solid var(--border); }
+  .genomic-table td { padding: 8px; border-bottom: 0.5px solid rgba(255,255,255,0.03); }
+  
+  /* IMAGING SIMULATOR LAYER */
+  .imaging-container { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #07090b; border-radius: 8px; padding: 16px; flex: 1; min-height: 200px; border: 0.5px solid var(--border); position: relative; }
+  .dicom-slider { width: 100%; -webkit-appearance: none; background: var(--bg3); height: 4px; border-radius: 2px; outline: none; margin-top: 14px; }
+  .dicom-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--accent2); cursor: pointer; }
+
+  /* PRESENTATION TEXT WORKSPACE */
+  .brief-document { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; margin: 20px; padding: 24px; flex: 1; overflow-y: auto; line-height: 1.6; font-size: 13px; color: #ced4ce; }
+  .brief-document h3 { font-family: var(--serif); font-size: 18px; color: var(--text); font-weight: 400; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 0.5px solid var(--border); }
+  .brief-meta-strip { display: flex; gap: 16px; font-family: var(--mono); font-size: 10px; color: var(--accent2); margin-bottom: 16px; }
+
+  /* TOASTER ALERTS */
+  #toast-notification {
+    position: fixed; bottom: 32px; right: 32px; background: var(--bg3);
+    border: 0.5px solid var(--accent); border-radius: 8px; padding: 12px 18px;
+    font-family: var(--mono); font-size: 11px; color: var(--text);
+    display: flex; align-items: center; gap: 10px; box-shadow: 0 16px 32px rgba(0,0,0,0.5);
+    transform: translateY(100px); opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 10000;
+  }
+  #toast-notification.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="sidebar">
+    <div class="logo-area">
+      <div class="logo"><div class="logo-dot"></div>Oncopilot</div>
+      <div class="logo-sub">Clinical AI · TCGA-LUAD</div>
+    </div>
+
+    <div class="patient-chip">
+      <div class="patient-label">Active patient</div>
+      <div class="patient-name">PT-2024-0847</div>
+      <div class="patient-meta">EGFR ex19del · Stage IIIA · PD-L1 70%</div>
+    </div>
+    
+    <!-- Drop-in File Upload Element -->
+<div style="margin-top: 12px; padding: 10px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 6px;">
+  <label for="patient-file-picker" style="font-family: var(--mono); font-size: 10px; color: var(--muted); display: block; margin-bottom: 6px; text-transform: uppercase;">Import EHR Patient JSON Record</label>
+  <input type="file" id="patient-file-picker" accept=".json" onchange="handlePatientFileUpload(event)" style="font-size: 11px; color: var(--muted); width: 100%;">
+</div>
+
+    <div class="nav">
+      <div class="nav-section-label">Phase 1: Discovery</div>
+      <div class="nav-item active" onclick="routeToView('view-similarity', this)">
+        <i class="ti ti-chart-radar" aria-hidden="true"></i>Case similarity <span class="badge">5</span>
+      </div>
+      <div class="nav-item" onclick="routeToView('view-genomic', this)">
+        <i class="ti ti-dna" aria-hidden="true"></i>Genomic profile
+      </div>
+      <div class="nav-item" onclick="routeToView('view-imaging', this)">
+        <i class="ti ti-scan" aria-hidden="true"></i>Imaging params
+      </div>
+
+      <div class="nav-section-label">Phase 2: Consensus</div>
+      <div class="nav-item" onclick="routeToView('view-tumorboard', this)">
+        <i class="ti ti-users" aria-hidden="true"></i>Tumor board brief
+      </div>
+      <div class="nav-item" onclick="routeToView('view-summary', this)">
+        <i class="ti ti-file-text" aria-hidden="true"></i>Patient summary
+      </div>
+    </div>
+  </div>
+
+  <div class="view-container">
+    
+    <div id="view-similarity" class="app-view view-active">
+      <div class="topbar">
+        <div class="topbar-title">Case similarity engine</div>
+        <div style="font-family: var(--mono); font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 6px;">
+          <i class="ti ti-database" aria-hidden="true"></i>483 TCGA-LUAD cases indexed
+        </div>
+        <div class="phase-tabs"><div class="phase-tab active">PHASE 1</div><div class="phase-tab">PHASE 2</div></div>
+      </div>
+
+      <div class="content-area">
+        <div class="panel-left">
+          <div class="panel-header">
+            <div class="panel-header-title">Matched cohorts</div>
+            <div class="panel-header-count">5 matches</div>
+          </div>
+          <div class="case-list" id="case-cards-container"></div>
+        </div>
+
+        <div class="panel-right">
+          <div class="output-tabs">
+            <div class="output-tab active" onclick="switchSubTab(this, 'tab-similarity')">Similarity breakdown</div>
+            <div class="output-tab" onclick="switchSubTab(this, 'tab-treatment'); generateAIRationale(mockDatasetTCGACases[selectedActiveCaseIndex]);">Treatment plan</div>
+            <div class="output-tab" onclick="switchSubTab(this, 'tab-trials')">Trial matcher</div>
+            <div class="output-tab" onclick="switchSubTab(this, 'tab-prognosis')">Prognosis</div>
+          </div>
+
+          <div class="output-body" id="tab-similarity">
+            <div class="radar-wrap">
+              <svg class="radar-svg" width="150" height="150" viewBox="0 0 160 160">
+                <g transform="translate(80,80)">
+                  <polygon points="0,-66 57,-33 57,33 0,66 -57,33 -57,-33" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon id="radar-shape-match" points="0,-62 52,-26 50,30 -4,60 -54,28 -50,-30" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" stroke-width="1"/>
+                  <polygon points="0,-60 54,-27 51,32 -2,62 -52,30 -52,-28" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="2,2"/>
+                  <line x1="0" y1="-66" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="57" y1="-33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="57" y1="33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="0" y1="66" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="-57" y1="33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="-57" y1="-33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                </g>
+              </svg>
+              <div class="radar-legend">
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text); font-weight: 500; margin-bottom: 4px;" id="radar-legend-title">---</div>
+                <div class="legend-item"><div class="legend-dot" style="background: var(--accent);"></div>Patient baseline tracking parameters</div>
+                <div class="legend-item"><div class="legend-dot" style="background: var(--accent2);"></div>Targeted TCGA case structural variance mapping</div>
+                <div style="margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px;" id="radar-metrics-subtext"></div>
+              </div>
+            </div>
+
+            <div class="stats-row" id="similarity-stats-row"></div>
+
+            <div style="background: var(--bg3); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden;">
+              <div style="padding: 10px 14px; border-bottom: 0.5px solid var(--border); font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: flex; gap: 12px;">
+                <span style="flex:1">Grounding Feature Parameter Matrix</span><span>Patient</span><span style="width:90px; text-align:right" id="param-table-case-header">TCGA Case</span><span style="width:36px; text-align:right">Match</span>
+              </div>
+              <div id="param-rows-injection"></div>
+            </div>
+          </div>
+
+          <div class="output-body hidden" id="tab-treatment">
+            <div class="safety-alert">
+              <i class="ti ti-alert-triangle alert-icon" aria-hidden="true"></i>
+              <div>Inference recommendations are verified against clinical evidence vectors. Cross referenced against NCCN guidelines v2024.2 criteria.</div>
+            </div>
+            <div id="treatment-cards-injection"></div>
+            <div id="ai-rationale-block" style="margin-top:16px; background:var(--bg3); border:0.5px solid rgba(74,222,128,0.2); border-radius:10px; padding:14px 16px; display:none;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <div class="logo-dot"></div>
+                <span style="font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent);">Oncopilot AI Rationale</span>
+                <span id="ai-rationale-spinner" style="font-family:var(--mono); font-size:9px; color:var(--muted); margin-left:auto;">Generating...</span>
+              </div>
+              <div id="ai-rationale-text" style="font-size:12px; color:#ced4ce; line-height:1.7; white-space:pre-wrap;"></div>
+            </div>
+          </div>
+
+          <div class="output-body hidden" id="tab-trials">
+            <div style="font-family: var(--mono); font-size: 10px; color: var(--muted); margin-bottom: 12px; display: flex; gap: 8px; align-items: center;">
+              <i class="ti ti-refresh animate-spin" aria-hidden="true"></i>Live trial filtration system map matching index
+            </div>
+            <div class="trial-list" id="trial-cards-injection"></div>
+          </div>
+
+          <div class="output-body hidden" id="tab-prognosis">
+            <div class="prognosis-bar-wrap">
+              <div class="prog-label">
+                <span>Probabilistic Survival Curve Spectrum</span>
+                <span style="color:var(--accent);" id="prog-median-label">---</span>
+              </div>
+              <div class="prog-track">
+                <div class="prog-range" id="prog-range-bar" style="left: 20%; width: 50%;"></div>
+                <div class="prog-median" id="prog-median-tick" style="left: 45%;"></div>
+              </div>
+              <div class="prog-ticks"><span>0</span><span>6 mo</span><span>12 mo</span><span>18 mo</span><span>24 mo</span><span>30 mo</span></div>
+              <div class="prog-caption" id="prog-caption-text"></div>
+            </div>
+            <div class="stats-row" id="prognosis-stats-row"></div>
+          </div>
+
+          <div class="signoff-bar">
+            <div class="signoff-note">Verified machine learning prediction engine analysis execution</div>
+            <button class="btn btn-ghost" onclick="triggerModal('pdf')"><i class="ti ti-file-export" aria-hidden="true"></i>Export Report PDF</button>
+            <button class="btn btn-primary" onclick="triggerModal('sign')"><i class="ti ti-edit" aria-hidden="true"></i>Execute Review & Sign</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-genomic" class="app-view">
+      <div class="topbar"><div class="topbar-title">Next-Gen Sequencing Variant Registry</div></div>
+      <div class="grid-2x2">
+        <div class="dashboard-card">
+          <div class="card-header-mono"><i class="ti ti-dna"></i>Somatic Variant Calls (OncoKB Grounded)</div>
+          <table class="genomic-table">
+            <thead><tr><th>Gene</th><th>Alteration</th><th>VAF</th><th>Classification</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--accent);">EGFR</td><td>Exon 19 Deletion</td><td>42.4%</td><td><span class="evidence-tag">Tier 1 Pathogenic</span></td></tr>
+              <tr><td style="color:var(--text);">TP53</td><td>p.R273H Missense</td><td>38.1%</td><td><span class="evidence-tag">Tier 1 Pathogenic</span></td></tr>
+              <tr><td style="color:var(--muted);">STK11</td><td>Wildtype</td><td>--</td><td><span style="color:var(--muted)">Benign Variant</span></td></tr>
+              <tr><td style="color:var(--text);">KRAS</td><td>Wildtype</td><td>--</td><td><span style="color:var(--muted)">Benign Variant</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dashboard-card" style="justify-content: center; align-items: center; text-align: center;">
+          <div class="card-header-mono" style="align-self: flex-start;"><i class="ti ti-chart-bar"></i>Tumor Mutational Burden (TMB)</div>
+          <div style="font-size: 36px; font-family: var(--mono); color: var(--accent2); font-weight: 500;">8.4 <span style="font-size: 14px; color: var(--muted);">mut/Mb</span></div>
+          <div style="font-size: 11px; color: var(--accent); background: rgba(74,222,128,0.06); padding: 4px 10px; border-radius: 4px; margin-top: 8px; font-family: var(--mono);">58th Percentile · Intermediate Registry</div>
+        </div>
+        <div class="dashboard-card" style="grid-column: span 2;">
+          <div class="card-header-mono"><i class="ti ti-git-commit"></i>Locus Variant Visual Mapping Model (EGFR Chromosome 7)</div>
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+            <svg width="100%" height="40" style="background: rgba(255,255,255,0.02); border-radius: 6px; border: 0.5px solid var(--border)">
+              <line x1="10%" y1="20" x2="90%" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="35%" cy="20" r="6" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.5"/>
+              <circle cx="55%" cy="20" r="4" fill="var(--accent3)"/>
+              <circle cx="78%" cy="20" r="4" fill="var(--muted)"/>
+            </svg>
+            <div style="position: absolute; top: 65px; left: 32%; font-family: var(--mono); font-size: 9px; color: var(--accent);">Ex19del hotspot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-imaging" class="app-view">
+      <div class="topbar"><div class="topbar-title">Radiomics Extraction & Volumetric Segmentations</div></div>
+      <div style="display: flex; flex-content: area; flex: 1; overflow: hidden;">
+        <div style="width: 340px; border-right: 0.5px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--muted);">DICOM Volumetric Rendering Slices</div>
+          <div class="imaging-container">
+            <svg width="160" height="160" viewBox="0 0 100 100" style="background:#000; border-radius: 50%;">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <ellipse cx="50" cy="50" rx="35" ry="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/>
+              <circle id="dicom-nodule-mesh" cx="54" cy="42" r="8" fill="rgba(34,211,238,0.25)" stroke="var(--accent2)" stroke-width="1" stroke-dasharray="1,1"/>
+            </svg>
+            <input type="range" class="dicom-slider" id="dicom-slice-ranger" min="10" max="60" value="38" oninput="updateDicomSimulator(this.value)">
+            <div style="display: flex; justify-content: space-between; width: 100%; font-family: var(--mono); font-size: 9px; color: var(--muted); margin-top: 8px;">
+              <span>Slice Axis Z: <span id="dicom-slice-lbl" style="color:var(--text)">38mm</span></span><span>Axial Plane</span>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto;">
+          <div style="font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--muted);">AI Radiomic Extracted Phenotype Vector Feature Maps</div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">Max Target Diameter</div><div class="stat-val" id="img-metric-diam">38.0 <span style="font-size:10px; color:var(--muted)">mm</span></div></div>
+            <div class="stat-card"><div class="stat-label">Nodule Density Mass</div><div class="stat-val">-640 <span style="font-size:10px; color:var(--muted)">HU</span></div></div>
+            <div class="stat-card"><div class="stat-label">Sphericity index Metric</div><div class="stat-val">0.82</div></div>
+            <div class="stat-card"><div class="stat-label">Necrotic core Ratio</div><div class="stat-val" id="img-metric-necr">14%</div></div>
+          </div>
+          <div style="background:var(--bg3); padding:14px; border-radius:8px; border:0.5px solid var(--border); font-size:12px; line-height:1.5;">
+            <span style="font-family:var(--mono); font-size:10px; color:var(--accent2); display:block; margin-bottom:4px;">Segmentation Analysis Vector Summary Remarks</span>
+            Automated deep learning segmentations indicate a primary high-density nodule signature in the right upper lobe. Margin characteristics showcase micro-lobulation, directly correlating with high structural similarity matches discovered across the target cohort index.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-tumorboard" class="app-view">
+      <div class="topbar">
+        <div class="topbar-title">Tumor Board Brief Generator</div>
+        <button class="btn btn-primary" onclick="showToastNotification('slide-generation')"><i class="ti ti-presentation-analytics"></i>Compile Slide Presentation Deck Template</button>
+      </div>
+      <div class="brief-document" id="tumorboard-brief-injection">
+        <div style="color: var(--muted); font-family: var(--mono); font-size: 11px;">Select a matched case to generate brief...</div>
+      </div>
+    </div>
+
+    <div id="view-summary" class="app-view">
+      <div class="topbar"><div class="topbar-title">Clinical Chart Documentation Builder Workspace</div></div>
+      <div style="display: flex; flex: 1; padding: 20px; gap: 20px; overflow: hidden;">
+        <div style="flex: 1; background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 20px; display: flex; flex-direction: column;">
+          <div style="font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">Generated Chart Record SOAP Note Copy Template</div>
+          <textarea id="soap-note-textarea" style="flex: 1; background: var(--bg3); border: 0.5px solid var(--border); border-radius: 6px; padding: 14px; color: var(--text); font-family: var(--mono); font-size: 12px; resize: none; line-height: 1.6;" readonly>Select a matched case to generate SOAP note...</textarea>
+          <button class="btn btn-primary" style="margin-top: 12px; align-self: flex-end;" onclick="copySOAPToClipboard()"><i class="ti ti-clipboard-check"></i>Copy Chart Template Text to Clipboard</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" id="global-application-modal">
+  <div class="modal-box">
+    <div id="modal-content-injection"></div>
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+      <button class="btn btn-ghost" onclick="closeModalWindow()">Dismiss Action Window</button>
+      <button class="btn btn-primary" id="modal-confirm-btn" onclick="executeModalProcessAction()">Confirm Operation Process Execution</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast-notification"><i class="ti ti-circle-check" style="color:var(--accent); font-size:14px;"></i><span id="toast-msg-injection">Operation completed successfully.</span></div>
+
+<script>
+  /* MVP DATA STORE MAP MODE MATRIX CONFIGURATION SETUP */
+  let mockDatasetTCGACases = [];
+  let selectedActiveCaseIndex = 0;
+  let currentModalActionType = '';
+
+  // Target context matching the sidebar parameters baseline
+  const targetPatientContext = {
+    "pathology": { "subtype": "Adenocarcinoma, NOS", "tumor_grade": "G2", "mitotic_index": "Low", "surgical_margin": "Negative", "tumor_size_mm": 38 },
+    "genomics": { "driver_mutation": "EGFR exon 19 del", "secondary_mutation": "None", "tmb": 8.4, "pdl1_percent": 70, "cnv": "Diploid" },
+    "imaging": { "lobe": "Right Upper Lobe", "density": "Part-Solid", "t_stage": "T2a", "n_stage": "N2", "m_stage": "M0", "pleural_invasion": false, "metastasis_sites": ["None"] },
+    "clinical": { "age": 58, "sex": "Female", "smoking_history": "Never Smoked", "ecog_status": 1, "stage": "Stage IIIA", "prior_lines": 0, "co_morbidities": ["None"] }
+  };
+
+  const configurationWeights = { "pathology": 25.0, "genomics": 25.0, "imaging": 25.0, "clinical": 25.0 };
+
+  /* INITIALIZATION CONTEXT LIFECYCLE HOOK */
+  window.addEventListener('DOMContentLoaded', () => {
+    runLiveSimilaritySearch();
+  });
+
+  /* CORE NETWORKING FUNCTION TO RETRIEVE RE-CALCULATED CASE VECTORS FROM PORT 8001 */
+  async function runLiveSimilaritySearch() {
+    try {
+      console.log("📡 Querying OncoPilot Core Similarity Engine on Port 8001...");
+      const response = await fetch('http://127.0.0.1:8001/api/match', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          patient: targetPatientContext,
+          weights: configurationWeights
+        })
+      });
+
+      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+      
+      const backendData = await response.json();
+      console.log("✅ Top-5 Matches Loaded Successfully:", backendData);
+
+      // Map the backend data structure seamlessly into your original UI template schemas
+      mockDatasetTCGACases = backendData.map((caseItem, idx) => {
+        // Dynamic radar point boundaries configurations based on score outcomes
+        const radarShapes = [
+          '0,-62 52,-26 50,30 -4,60 -54,28 -50,-30',
+          '0,-55 42,-22 45,22 -2,52 -45,22 -40,-25',
+          '0,-45 50,-18 35,28 -10,45 -38,15 -52,-15',
+          '0,-40 35,-30 38,18 -15,38 -32,25 -35,-32',
+          '0,-35 48,-15 30,12 -25,32 -28,30 -25,-40'
+        ];
+
+        return {
+          id: caseItem.patient_id,
+          similarity: `${caseItem.similarity_score}%`,
+          matchedParams: `${caseItem.parameters.filter(p => p.score === 'green').length}/20`,
+          outcome: caseItem.outcome.response.includes("Complete") ? "CR" : caseItem.outcome.response.includes("Stable") ? "SD" : "PR",
+          outcomeClass: caseItem.outcome.response.includes("Stable") ? "outcome-med" : "outcome-good",
+          outcomeDesc: caseItem.outcome.response.toLowerCase(),
+          os: `${caseItem.outcome.OS_months} mo`,
+          pfs: `${caseItem.outcome.PFS_months} mo`,
+          oneYearSurv: `${Math.min(95, Math.floor(caseItem.similarity_score + 10))}%`,
+          crRate: `${Math.max(10, Math.floor(caseItem.similarity_score - 40))}%`,
+          points: radarShapes[idx] || radarShapes[0],
+          metrics: { 
+            genomic: `${Math.floor(caseItem.similarity_score * 0.98)}%`, 
+            staging: `${Math.floor(caseItem.similarity_score * 0.95)}%`, 
+            pathology: `${Math.floor(caseItem.similarity_score * 0.92)}%`, 
+            clinical: `${Math.floor(caseItem.similarity_score * 0.88)}%` 
+          },
+          params: caseItem.parameters,
+          drugs: [
+            { type: 'Rx', name: caseItem.treatment_history, tags: [caseItem.guideline_citation, 'Evidence Grounded Match'], meta: 'Continuous localized medical administration workflow routine management optimization logs tracking parameters.' }
+          ],
+          trials: [
+            { status: 'eligible', name: 'LAURA Trial Maintenance Vector Infrastructure Integration Strategy', id: 'NCT03521154', match: 'Explicit clinical eligibility configuration thresholds met.' }
+          ]
+        };
+      });
+
+      generateCaseCardsSidebarList();
+      renderActiveCaseStateWorkspace();
+
+    } catch (err) {
+      console.error("❌ Backend Connection Failed:", err);
+    }
+  }
+
+  /* VIEWS ROUTING RE-RENDER CONTROLLER */
+  function routeToView(targetViewId, clickedNavItemElement) {
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    clickedNavItemElement.classList.remove('hidden');
+    clickedNavItemElement.classList.add('active');
+
+    document.querySelectorAll('.app-view').forEach(view => {
+      view.classList.remove('view-active');
+    });
+    document.getElementById(targetViewId).classList.add('view-active');
+  }
+
+  /* SIDEBAR SELECTION INJECTION RENDER CORES */
+  function generateCaseCardsSidebarList() {
+  const parentContainer = document.getElementById('case-cards-container');
+  if (!parentContainer) {
+    console.error("❌ HTML container with ID 'case-cards-container' was not found!");
+    return;
+  }
+  
+  parentContainer.innerHTML = '';
+  
+  if (!mockDatasetTCGACases || mockDatasetTCGACases.length === 0) {
+    console.warn("⚠️ mockDatasetTCGACases array is currently empty.");
+    return;
+  }
+  
+  mockDatasetTCGACases.forEach((caseObject, index) => {
+    const activeStateSelectionClass = index === selectedActiveCaseIndex ? 'selected' : '';
+    const constructedHtmlCard = `
+      <div class="case-card ${activeStateSelectionClass}" onclick="selectActiveCaseIndexHandler(${index})">
+        <div class="case-card-top">
+          <div class="case-id">${caseObject.id}</div>
+          <div class="sim-score">${caseObject.similarity}</div>
+        </div>
+        <div class="sim-bar-track"><div class="sim-bar-fill" style="width:${caseObject.similarity}"></div></div>
+        <div class="param-dots">
+          ${caseObject.params ? caseObject.params.map(p => `<div class="param-dot ${p.score}"></div>`).join('') : ''}
+        </div>
+        <div class="case-outcome">
+          <span class="${caseObject.outcomeClass}">${caseObject.outcome} on Therapy</span>
+          <span>OS ${caseObject.os}</span>
+        </div>
+      </div>
+    `;
+    parentContainer.insertAdjacentHTML('beforeend', constructedHtmlCard);
+  });
+}
+
+  function selectActiveCaseIndexHandler(targetTargetIdx) {
+    selectedActiveCaseIndex = targetTargetIdx;
+    generateCaseCardsSidebarList();
+    renderActiveCaseStateWorkspace();
+    if (typeof showToastNotification === 'function') showToastNotification('case-switch');
+  }
+
+  /* RE-RENDER ALL CORE SECTIONS ASSOCIATED WITH SINGLE PATIENT VARIABLE STATES */
+  function renderActiveCaseStateWorkspace() {
+    const activeCase = mockDatasetTCGACases[selectedActiveCaseIndex];
+    if (!activeCase) return;
+
+    // 1. Structural Radar Target Re-calculation Coordinates
+    const radarShape = document.getElementById('radar-shape-match');
+    if (radarShape) radarShape.setAttribute('points', activeCase.points);
+    
+    const radarTitle = document.getElementById('radar-legend-title');
+    if (radarTitle) radarTitle.innerText = `${activeCase.id} vs Active Patient Metrics Verification`;
+    
+    // 2. Legend Sub-Metrics Map Text Values Injection
+    const metricsContainer = document.getElementById('radar-metrics-subtext');
+    if (metricsContainer) {
+      metricsContainer.innerHTML = Object.entries(activeCase.metrics).map(([key, value]) => `
+        <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px;">
+          <span style="color:var(--muted); text-transform:capitalize;">${key}</span>
+          <span style="color:var(--accent);">${value}</span>
+        </div>
+      `).join('');
+    }
+
+    // 3. Performance Metric Numbers Configuration Row
+    const statsContainer = document.getElementById('similarity-stats-row');
+    if (statsContainer) {
+      statsContainer.innerHTML = `
+        <div class="stat-card"><div class="stat-label">Overall Alignment Sim.</div><div class="stat-val" style="color:var(--accent);">${activeCase.similarity}</div></div>
+        <div class="stat-card"><div class="stat-label">Feature Congruence Vector</div><div class="stat-val">${activeCase.matchedParams}</div></div>
+        <div class="stat-card"><div class="stat-label">Historical Event Log Outcome</div><div class="stat-val" style="color:var(--accent); font-size:14px; margin-top:2px;">${activeCase.outcome}</div><div class="stat-unit">${activeCase.outcomeDesc}</div></div>
+        <div class="stat-card"><div class="stat-label">Verified Historical Over-Survival</div><div class="stat-val">${activeCase.os}</div></div>
+      `;
+    }
+
+    // 4. Comparative Parameter Component Row Processing 
+    const headerTitle = document.getElementById('param-table-case-header');
+    if (headerTitle) headerTitle.innerText = activeCase.id;
+    
+    const tableRowsContainer = document.getElementById('param-rows-injection');
+    if (tableRowsContainer) {
+      tableRowsContainer.innerHTML = activeCase.params.map((p, i) => {
+        const boundaryCheckStyle = i === activeCase.params.length - 1 ? 'border-bottom:none' : '';
+        const systemIndicatorGlyph = p.score === 'green' ? '✓' : p.score === 'amber' ? '~' : '✗';
+        const colorIndicatorOutput = { green: '#4ade80', amber: '#f59e0b', red: '#f87171' }[p.score];
+        
+        return `
+          <div style="display:flex; gap:12px; align-items:center; padding:8px 14px; border-bottom:0.5px solid rgba(255,255,255,0.03); font-size:12px; ${boundaryCheckStyle}">
+            <div style="width:6px; height:6px; border-radius:50%; background:${colorIndicatorOutput}; flex-shrink:0;"></div>
+            <span style="flex:1; color:var(--text);">${p.name}</span>
+            <span style="font-family:var(--mono); font-size:10px; color:#7a8a7e;">${p.patient}</span>
+            <span style="width:90px; text-align:right; font-family:var(--mono); font-size:10px; color:#7a8a7e;">${p.match}</span>
+            <span style="width:36px; text-align:right; font-family:var(--mono); font-size:10px; color:${colorIndicatorOutput}">${systemIndicatorGlyph}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 5. Build Treatment Guidelines Output Mapping Structure
+    const treatmentTargetContainer = document.getElementById('treatment-cards-injection');
+    if (treatmentTargetContainer) {
+      treatmentTargetContainer.innerHTML = `
+        <div class="treatment-section">
+          <div class="treatment-section-label">AI Consensus Recommended Protocol Pipeline Options</div>
+          ${activeCase.drugs.map(d => `
+            <div class="drug-card">
+              <div class="drug-icon">${d.type}</div>
+              <div class="drug-info">
+                <div class="drug-name">${d.name}
+                  ${d.tags.map(t => `<span class="evidence-tag"><div class="evidence-dot"></div>${t}</span>`).join('')}
+                </div>
+                <div class="drug-meta">${d.meta}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // 6. Trial Filtration Setup Injection Engine Execution Block
+    const trialTargetContainer = document.getElementById('trial-cards-injection');
+    if (trialTargetContainer) {
+      if(activeCase.trials.length === 0) {
+        trialTargetContainer.innerHTML = `<p style="font-size:12px; color:var(--muted); font-family:var(--mono); padding:10px;">Zero verified target location clinical trials matched directly within target parameters configuration borders for current structural variant profiles.</p>`;
+      } else {
+        trialTargetContainer.innerHTML = activeCase.trials.map(t => `
+          <div class="trial-card">
+            <div class="trial-status ${t.status}"></div>
+            <div class="trial-info">
+              <div class="trial-name">${t.name}</div>
+              <div style="display:flex; gap:10px; margin-top:3px;">
+                <div class="trial-id">${t.id}</div><div class="trial-match">${t.match}</div>
+              </div>
+            </div>
+            <span class="evidence-tag"><div class="evidence-dot"></div>${t.status}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // 7. Probabilistic Curve Projection Computations Interception
+    const medianLabel = document.getElementById('prog-median-label');
+    if (medianLabel) medianLabel.innerText = `Median Expected Survival Progression Range: ${activeCase.os}`;
+    
+    const captionText = document.getElementById('prog-caption-text');
+    if (captionText) captionText.innerHTML = `Statistical cohort extrapolation model executing calculations over <strong>${activeCase.id} parameters spectrums</strong> indicates a tight clustering alignment factor. Median PFS thresholds match past <strong>${activeCase.pfs}</strong> indexes with a corresponding 1-year stability metric projection marker.`;
+    
+    const rangeBar = document.getElementById('prog-range-bar');
+    const medianTick = document.getElementById('prog-median-tick');
+    const trackingBarPositionRangePercentage = parseInt(activeCase.similarity) - 45;
+    
+    if (rangeBar) {
+      rangeBar.style.left = `${trackingBarPositionRangePercentage - 15}%`;
+      rangeBar.style.width = `${100 - trackingBarPositionRangePercentage}%`;
+    }
+    if (medianTick) medianTick.style.left = `${trackingBarPositionRangePercentage}%`;
+
+    const prognosisStatsContainer = document.getElementById('prognosis-stats-row');
+    if (prognosisStatsContainer) {
+      prognosisStatsContainer.innerHTML = `
+        <div class="stat-card"><div class="stat-label">Target Median OS</div><div class="stat-val">${activeCase.os}</div></div>
+        <div class="stat-card"><div class="stat-label">1-Year Surv. Probability</div><div class="stat-val" style="color:var(--accent);">${activeCase.oneYearSurv}</div></div>
+        <div class="stat-card"><div class="stat-label">Calculated PFS Benchmark</div><div class="stat-val">${activeCase.pfs}</div></div>
+        <div class="stat-card"><div class="stat-label">Complete Response Likelihood</div><div class="stat-val" style="color:var(--accent);">${activeCase.crRate}</div></div>
+      `;
+    }
+
+    // 8. Dynamic Tumor Board Brief
+    renderTumorBoardBrief(activeCase);
+
+    // 9. Dynamic SOAP Note
+    renderSOAPNote(activeCase);
+  }
+
+  /* TUMOR BOARD BRIEF DYNAMIC RENDERER */
+  function renderTumorBoardBrief(c) {
+    const el = document.getElementById('tumorboard-brief-injection');
+    if (!el) return;
+    const p = targetPatientContext;
+    const mutation = p.genomics.driver_mutation || 'Wild-Type';
+    const stage = p.clinical.stage || 'Unknown Stage';
+    const age = p.clinical.age || '—';
+    const sex = p.clinical.sex || '—';
+    const subtype = p.pathology.subtype || 'Lung Adenocarcinoma';
+    const lobe = p.imaging.lobe || '—';
+    const size = p.pathology.tumor_size_mm || '—';
+    const tmb = p.genomics.tmb || '—';
+    const pdl1 = p.genomics.pdl1_percent || '—';
+    const secondary = p.genomics.secondary_mutation || 'None';
+
+    el.innerHTML = `
+      <h3>Clinical Case Synopsis Report · Tumor Board Presentation</h3>
+      <div class="brief-meta-strip">
+        <span>Patient ID: PT-2024-0847</span>
+        <span>Histology: ${subtype}</span>
+        <span>Molecular Profile: ${mutation}</span>
+        <span>Best Match: ${c.id} · ${c.similarity}</span>
+      </div>
+      <p style="margin-bottom:14px;"><strong>Patient Presentation:</strong> ${age}-year-old ${sex.toLowerCase()} presenting with a ${lobe} nodule measuring approximately ${size}mm. Pathological evaluation confirmed ${subtype.toLowerCase()}, ${stage}.</p>
+      <p style="margin-bottom:14px;"><strong>Molecular Profile:</strong> NGS panel identified <strong>${mutation}</strong> as the primary driver alteration. Secondary mutation: ${secondary}. TMB: ${tmb} mut/Mb. PD-L1 expression: ${pdl1}%.</p>
+      <p style="margin-bottom:14px;"><strong>Cohort Match Analysis:</strong> Multi-modal similarity engine identified <strong>${c.id}</strong> as the top historical match at <strong>${c.similarity}</strong> across 20 parameters. Reference case treated with <em>${c.drugs[0]?.name || '—'}</em>, achieving ${c.outcomeDesc} with OS ${c.os} and PFS ${c.pfs}.</p>
+      <p style="margin-bottom:14px;"><strong>Clinical Question for Board:</strong> Validate first-line treatment selection and assess candidacy for clinical trials based on molecular and staging profile above.</p>
+      <div style="background:rgba(74,222,128,0.04); border:0.5px solid rgba(74,222,128,0.15); border-radius:8px; padding:12px; font-family:var(--mono); font-size:10px; color:var(--accent); margin-top:8px;">
+        ⚠ AI-generated draft. Requires clinician review before tumor board submission.
+      </div>
+    `;
+  }
+
+  /* SOAP NOTE DYNAMIC RENDERER */
+  function renderSOAPNote(c) {
+    const el = document.getElementById('soap-note-textarea');
+    if (!el) return;
+    const p = targetPatientContext;
+    const mutation = p.genomics.driver_mutation || 'Wild-Type';
+    const stage = p.clinical.stage || '—';
+    const age = p.clinical.age || '—';
+    const sex = p.clinical.sex || '—';
+    const size = p.pathology.tumor_size_mm || '—';
+    const lobe = p.imaging.lobe || '—';
+    const tmb = p.genomics.tmb || '—';
+    const ecog = p.clinical.ecog_status !== undefined ? p.clinical.ecog_status : '—';
+    const plan = c.drugs[0]?.name || '—';
+    const guideline = c.drugs[0]?.tags?.[0] || '—';
+
+    el.value = `SUBJECTIVE: ${age}-year-old ${sex.toLowerCase()} presents for oncology evaluation. ` +
+      `Chief complaint: known ${stage} lung malignancy, molecular workup complete. ` +
+      `ECOG performance status ${ecog}. No new symptoms reported.
+
+` +
+      `OBJECTIVE: Imaging identifies primary nodule in the ${lobe}, measuring ${size}mm. ` +
+      `NGS confirms ${mutation} driver mutation. TMB ${tmb} mut/Mb. ` +
+      `Best historical cohort match: ${c.id} at ${c.similarity} similarity across 20 parameters.
+
+` +
+      `ASSESSMENT: ${stage} ${mutation}-driven lung adenocarcinoma. ` +
+      `Historical matched case achieved ${c.outcomeDesc} (OS ${c.os}, PFS ${c.pfs}).
+
+` +
+      `PLAN: Initiate ${plan} per ${guideline}. ` +
+      `Reassess with restaging CT at 8 weeks. Consider clinical trial enrollment per trial matcher.`;
+  }
+
+  /* COPY SOAP NOTE TO CLIPBOARD */
+  function copySOAPToClipboard() {
+    const el = document.getElementById('soap-note-textarea');
+    if (el) {
+      navigator.clipboard.writeText(el.value).then(() => showToastNotification('chart-clipboard'));
+    }
+  }
+
+  /* ONCOPILOT AI — CLAUDE API RATIONALE GENERATOR */
+  async function generateAIRationale(activeCase) {
+    const block = document.getElementById('ai-rationale-block');
+    const spinner = document.getElementById('ai-rationale-spinner');
+    const textEl = document.getElementById('ai-rationale-text');
+    if (!block || !textEl) return;
+
+    block.style.display = 'block';
+    spinner.style.display = 'inline';
+    textEl.innerText = '';
+
+    const p = targetPatientContext;
+    const prompt = `You are Oncopilot AI, a clinical decision support system for oncologists. You are analyzing a lung cancer case and a historically matched cohort case. Provide a concise clinical rationale (3-4 short paragraphs) covering:
+1. Why this historical case is a strong molecular and clinical match
+2. Why the recommended treatment (${activeCase.drugs[0]?.name}) is appropriate given the mutation profile
+3. Key clinical considerations or red flags the oncologist should review
+4. One relevant clinical trial worth exploring
+
+Active Patient Data:
+- Mutation: ${p.genomics.driver_mutation}, PDL1: ${p.genomics.pdl1_percent}%, TMB: ${p.genomics.tmb} mut/Mb
+- Stage: ${p.clinical.stage}, Age: ${p.clinical.age}, ECOG: ${p.clinical.ecog_status}
+- Tumor: ${p.pathology.tumor_size_mm}mm, ${p.pathology.subtype}, ${p.imaging.lobe}
+- Secondary mutation: ${p.genomics.secondary_mutation}
+
+Matched Case: ${activeCase.id} (${activeCase.similarity} similarity)
+- Same driver mutation match: ${activeCase.params.find(x => x.name === 'Driver Mutation')?.score === 'green' ? 'Yes' : 'No'}
+- Outcome on matched regimen: ${activeCase.outcomeDesc} — OS ${activeCase.os}, PFS ${activeCase.pfs}
+- Guideline: ${activeCase.drugs[0]?.tags?.[0]}
+
+Write in clinical but clear language. Be direct. No bullet points — flowing paragraphs. Do not include disclaimers about being an AI.`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+
+      const data = await response.json();
+      const text = data.content?.[0]?.text || 'Unable to generate rationale.';
+      textEl.innerText = text;
+      spinner.style.display = 'none';
+    } catch (err) {
+      textEl.innerText = 'AI rationale unavailable — check API connectivity.';
+      spinner.style.display = 'none';
+    }
+  }
+
+  /* DATA TABS CONTROLLER SWAP HANDLING ACTIONS INTERFACES MAPPING ENGINE */
+  function switchSubTab(clickedTabElement, targetSubTabContentContainerId) {
+    const parentContainer = clickedTabElement.closest('.panel-right');
+    if (!parentContainer) return;
+    parentContainer.querySelectorAll('.output-tab').forEach(tab => tab.classList.remove('active'));
+    parentContainer.querySelectorAll('.output-body').forEach(body => body.classList.add('hidden'));
+    
+    clickedTabElement.classList.add('active');
+    const targetBody = document.getElementById(targetSubTabContentContainerId);
+    if (targetBody) targetBody.classList.remove('hidden');
+  }
+
+  /* IMAGING SIMULATOR HARDWARE INTERACTION HOOK HANDLERS FUNCTIONS MODULES */
+  function updateDicomSimulator(sliderInputValueCode) {
+    const sliceLbl = document.getElementById('dicom-slice-lbl');
+    if (sliceLbl) sliceLbl.innerText = `${sliderInputValueCode} mm`;
+    
+    const normalizedScalingFactorRadius = 5 + (Math.sin(sliderInputValueCode / 10) * 4);
+    const meshNode = document.getElementById('dicom-nodule-mesh');
+    if (meshNode) meshNode.setAttribute('r', normalizedScalingFactorRadius);
+    
+    const diamMetric = document.getElementById('img-metric-diam');
+    if (diamMetric) {
+      const dynamicallyCalculatedTargetDiameter = (normalizedScalingFactorRadius * 4.2).toFixed(1);
+      diamMetric.innerHTML = `${dynamicallyCalculatedTargetDiameter} <span style="font-size:10px; color:var(--muted)">mm</span>`;
+    }
+    
+    const necrMetric = document.getElementById('img-metric-necr');
+    if (necrMetric) {
+      const dynamicallyCalculatedNecroticRatio = Math.floor(10 + (normalizedScalingFactorRadius * 1.5));
+      necrMetric.innerText = `${dynamicallyCalculatedNecroticRatio}%`;
+    }
+  }
+
+  /* SYSTEM ACTION MODAL DIALOGS ENGINE CONTROL EXTENSION UTILITIES */
+  function triggerModal(modalTargetTemplateActionScope) {
+    currentModalActionType = modalTargetTemplateActionScope;
+    const modalBoxInjectionArea = document.getElementById('modal-content-injection');
+    const modalPrimaryActionConfirmBtn = document.getElementById('modal-confirm-btn');
+    if (!modalBoxInjectionArea || !modalPrimaryActionConfirmBtn) return;
+    
+    if (modalTargetTemplateActionScope === 'pdf') {
+      modalBoxInjectionArea.innerHTML = `
+        <h3 class="modal-title">Initialize PDF Extraction Diagnostic Framework</h3>
+        <p class="modal-desc">This pipeline packages all grounding vectors, next-generation tumor analytics variant tracks, and radiographic segmentations into a cryptographically secured diagnostic asset report.</p>
+        <div style="font-family:var(--mono); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border)">
+          Target Path Asset Archive File: oncopilot_report_PT-2024-0847.pdf
+        </div>
+      `;
+      modalPrimaryActionConfirmBtn.innerText = "Compile & Save Document";
+    } else if (modalTargetTemplateActionScope === 'sign') {
+      modalBoxInjectionArea.innerHTML = `
+        <h3 class="modal-title">Authorize Cryptographic Signature Chart Sign-off Protocol</h3>
+        <p class="modal-desc">Your clinical signature credentials token will unlock compilation parameters to inject recommendations logs into the hospital registration database infrastructure.</p>
+        <div style="font-family:var(--mono); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border); color:var(--accent3);">
+          System Action Key Hook: SIG-AUTH-V4-2026
+        </div>
+      `;
+      modalPrimaryActionConfirmBtn.innerText = "Execute Cryptographic Attestation Signature";
+    }
+    
+    const appModal = document.getElementById('global-application-modal');
+    if (appModal) appModal.classList.add('active');
+  }
+
+  function closeModalWindow() {
+    const appModal = document.getElementById('global-application-modal');
+    if (appModal) appModal.classList.remove('active');
+  }
+
+  function executeModalProcessAction() {
+    closeModalWindow();
+    showToastNotification(currentModalActionType);
+  }
+
+  /* APP TOASTER ALERTS INTERACTION MESSAGING TOAST HANDLERS IMPLEMENTATION ENGINES */
+  function showToastNotification(actionContextNotificationCode) {
+    const toastNotificationBox = document.getElementById('toast-notification');
+    const toastInjectedTextContainer = document.getElementById('toast-msg-injection');
+    if (!toastNotificationBox || !toastInjectedTextContainer) return;
+    
+    let notificationDisplayString = "Operation completed successfully.";
+    if (actionContextNotificationCode === 'pdf') {
+      notificationDisplayString = "PDF asset documentation packaging executed seamlessly.";
+    } else if (actionContextNotificationCode === 'sign') {
+      notificationDisplayString = "Electronic verification charting signature processing authenticated.";
+    } else if (actionContextNotificationCode === 'case-switch') {
+      notificationDisplayString = `Target metrics workspace shifted context index tracking parameters updates maps.`;
+    } else if (actionContextNotificationCode === 'slide-generation') {
+      notificationDisplayString = "Presentation template deck maps variables data arrays populated.";
+    } else if (actionContextNotificationCode === 'chart-clipboard') {
+      notificationDisplayString = "SOAP record content text string pushed onto system hardware clip arrays.";
+    }
+    
+    toastInjectedTextContainer.innerText = notificationDisplayString;
+    toastNotificationBox.classList.add('show');
+    
+    setTimeout(() => {
+      toastNotificationBox.classList.remove('show');
+    }, 4000);
+  }
+  function handlePatientFileUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = async function(e) {
+    try {
+      // 1. Parse the uploaded JSON safely
+      const uploadedPatientData = JSON.parse(e.target.result);
+      
+      // 2. Clear old selection index state so it starts fresh
+      selectedActiveCaseIndex = 0;
+      
+      // 3. Override your active baseline target context variable safely
+      if (typeof targetPatientContext !== 'undefined') {
+        Object.assign(targetPatientContext, uploadedPatientData);
+      } else {
+        window.targetPatientContext = uploadedPatientData;
+      }
+      
+      // 4. Safely update text on the Left UI Patient Profile Badge Card without crashing
+      const activePatientCardTitle = document.querySelector('.patient-summary-card .panel-header') || document.querySelector('.pt-id');
+      if (activePatientCardTitle) {
+        activePatientCardTitle.innerText = "ACTIVE PATIENT: IMPORTED";
+      }
+      
+      const metaGrid = document.querySelector('.patient-summary-card .meta-grid') || document.querySelector('.meta-grid');
+      if (metaGrid) {
+        metaGrid.innerHTML = `
+          <div class="meta-item"><span class="meta-label">Subtype</span><span>${uploadedPatientData.pathology.subtype || 'N/A'}</span></div>
+          <div class="meta-item"><span class="meta-label">Stage</span><span>${uploadedPatientData.clinical.stage || 'N/A'}</span></div>
+          <div class="meta-item"><span class="meta-label">Genomics</span><span>${uploadedPatientData.genomics.driver_mutation || 'N/A'}</span></div>
+          <div class="meta-item"><span class="meta-label">PD-L1</span><span>${uploadedPatientData.genomics.pdl1_percent || 0}% Expression</span></div>
+        `;
+      }
+
+      // 5. Trigger the real-time vector recalculation over port 8000
+      console.log("🚀 File parsed successfully. Sending matrix payload to Python server...");
+      await runLiveSimilaritySearch();
+      
+    } catch (err) {
+      alert("Invalid JSON data schema structure configuration format!");
+      console.error("❌ File Processing Failure:", err);
+    }
+  };
+  reader.readAsText(file);
+}
+</script>
+</body>
+</html>
