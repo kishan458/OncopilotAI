@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +11,23 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* LIGHT MODE — swapped from dark */
-    --bg:      #F5F7FA;
-    --bg2:     #FFFFFF;
-    --bg3:     #EEF1F6;
-    --border:  rgba(15,25,50,0.09);
-    --border2: rgba(15,25,50,0.15);
-    --text:    #0F1932;
-    --muted:   #6B7A99;
-    --accent:  #16A34A;
-    --accent2: #0284C7;
-    --accent3: #D97706;
-    --red:     #DC2626;
+    --bg: #0a0d0f;
+    --bg2: #111417;
+    --bg3: #181d21;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8ebe8;
+    --muted: #7a8a7e;
+    --accent: #4ade80;
+    --accent2: #22d3ee;
+    --accent3: #f59e0b;
+    --red: #f87171;
     --mono: 'DM Mono', monospace;
     --sans: 'DM Sans', sans-serif;
     --serif: 'Fraunces', serif;
   }
 
+  /* FIX 1: Full page — no padding, no centering offset, fill entire viewport */
   html, body {
     width: 100%;
     height: 100%;
@@ -40,14 +39,17 @@
     color: var(--text);
     font-family: var(--sans);
     display: flex;
+    /* removed padding and justify-content/align-items centering */
   }
 
+  /* FIX 1 continued: shell fills full viewport, no max-width, no border-radius, no fixed height */
   .shell {
     display: flex;
     width: 100%;
     height: 100vh;
     font-family: var(--sans);
     background: var(--bg);
+    /* removed: max-width, border-radius, box-shadow, border — it's full screen now */
     overflow: hidden;
   }
 
@@ -60,7 +62,6 @@
     display: flex;
     flex-direction: column;
     padding: 0;
-    box-shadow: 1px 0 0 var(--border);
   }
 
   .logo-area {
@@ -159,13 +160,13 @@
   }
 
   .nav-item:hover { background: var(--bg3); color: var(--text); }
-  .nav-item.active { background: rgba(22,163,74,0.08); color: var(--accent); border: 0.5px solid rgba(22,163,74,0.2); font-weight: 500; }
+  .nav-item.active { background: rgba(74,222,128,0.1); color: var(--accent); border: 0.5px solid rgba(74,222,128,0.2); font-weight: 500; }
 
   .nav-item .badge {
     margin-left: auto;
     font-family: var(--sans);
     font-size: 9px;
-    background: rgba(22,163,74,0.12);
+    background: rgba(74,222,128,0.15);
     color: var(--accent);
     border-radius: 4px;
     padding: 1px 5px;
@@ -199,7 +200,7 @@
     position: relative;
   }
 
-  /* TOPBAR */
+  /* MAIN HEADER ELEMENTS */
   .topbar {
     height: 52px;
     min-height: 52px;
@@ -209,7 +210,6 @@
     align-items: center;
     padding: 0 20px;
     gap: 12px;
-    box-shadow: 0 1px 0 var(--border);
   }
 
   .topbar-title {
@@ -228,10 +228,11 @@
     padding: 3px;
   }
 
+  .phase-tab { }
   .phase-tab.active {
     background: var(--bg2);
     color: var(--accent);
-    border: 0.5px solid rgba(22,163,74,0.25);
+    border: 0.5px solid rgba(74,222,128,0.25);
   }
 
   .content-area {
@@ -248,7 +249,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: var(--bg2);
+    background: rgba(10,13,15,0.4);
   }
 
   .panel-header {
@@ -272,7 +273,7 @@
     font-family: var(--sans);
     font-size: 10px;
     color: var(--accent);
-    background: rgba(22,163,74,0.08);
+    background: rgba(74,222,128,0.1);
     border-radius: 4px;
     padding: 2px 6px;
   }
@@ -301,8 +302,8 @@
     user-select: none;
   }
 
-  .case-card:hover { border-color: var(--border2); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(15,25,50,0.07); }
-  .case-card.selected { border-color: rgba(22,163,74,0.45); background: rgba(22,163,74,0.04); box-shadow: inset 0 0 12px rgba(22,163,74,0.03); }
+  .case-card:hover { border-color: var(--border2); transform: translateY(-1px); }
+  .case-card.selected { border-color: rgba(74,222,128,0.45); background: rgba(74,222,128,0.04); box-shadow: inset 0 0 12px rgba(74,222,128,0.02); }
 
   .case-card-top {
     display: flex;
@@ -343,7 +344,7 @@
   .param-dot { width: 6px; height: 6px; border-radius: 50%; }
   .param-dot.green { background: var(--accent); }
   .param-dot.amber { background: var(--accent3); }
-  .param-dot.red   { background: var(--red); }
+  .param-dot.red { background: var(--red); }
 
   .case-outcome {
     margin-top: 8px;
@@ -362,10 +363,10 @@
     white-space: nowrap;
   }
 
-  .outcome-good { color: var(--accent)  !important; border: 0.5px solid rgba(22,163,74,0.2); }
-  .outcome-med  { color: var(--accent3) !important; border: 0.5px solid rgba(217,119,6,0.2); }
+  .outcome-good { color: var(--accent) !important; border: 0.5px solid rgba(74,222,128,0.15); }
+  .outcome-med { color: var(--accent3) !important; border: 0.5px solid rgba(245,158,11,0.15); }
 
-  /* RIGHT SIDE DETAIL */
+  /* RIGHT SIDE DETAIL WORKSPACE */
   .panel-right {
     flex: 1;
     display: flex;
@@ -377,7 +378,7 @@
     display: flex;
     border-bottom: 0.5px solid var(--border);
     padding: 0 16px;
-    background: var(--bg2);
+    background: rgba(17,20,23,0.3);
   }
 
   .output-tab {
@@ -406,7 +407,7 @@
   .output-body::-webkit-scrollbar { width: 4px; }
   .output-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
-  /* TREATMENT BLOCK */
+  /* COMPONENT: TREATMENT BLOCK */
   .treatment-section { margin-bottom: 20px; }
   .treatment-section-label {
     font-family: var(--sans);
@@ -432,8 +433,8 @@
 
   .drug-icon {
     width: 32px; height: 32px; border-radius: 6px;
-    background: rgba(22,163,74,0.06);
-    border: 0.5px solid rgba(22,163,74,0.2);
+    background: rgba(74,222,128,0.06);
+    border: 0.5px solid rgba(74,222,128,0.2);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--sans); font-size: 10px; color: var(--accent); font-weight: 500; flex-shrink: 0;
   }
@@ -446,8 +447,8 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: rgba(2,132,199,0.06);
-    border: 0.5px solid rgba(2,132,199,0.2);
+    background: rgba(34,211,238,0.06);
+    border: 0.5px solid rgba(34,211,238,0.2);
     border-radius: 4px;
     padding: 1px 6px;
     font-family: var(--sans);
@@ -457,7 +458,7 @@
   }
   .evidence-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent2); }
 
-  /* RADAR */
+  /* RADAR DATA LAYOUT */
   .radar-wrap {
     display: flex;
     align-items: center;
@@ -475,7 +476,7 @@
   .legend-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
   .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-  /* STATS GRID */
+  /* ANALYTICAL METRICS GRID */
   .stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -509,7 +510,7 @@
 
   .stat-unit { font-size: 10px; color: var(--muted); margin-top: 2px; font-family: var(--sans); }
 
-  /* PROGNOSIS */
+  /* PROGNOSIS RANGE TRACKER */
   .prognosis-bar-wrap {
     background: var(--bg3);
     border: 0.5px solid var(--border);
@@ -541,7 +542,7 @@
     position: absolute;
     height: 100%;
     border-radius: 6px;
-    background: linear-gradient(90deg, rgba(22,163,74,0.2), var(--accent));
+    background: linear-gradient(90deg, rgba(74,222,128,0.2), var(--accent));
     transition: left 0.5s ease, width 0.5s ease;
   }
 
@@ -567,7 +568,7 @@
   .prog-caption { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
   .prog-caption strong { color: var(--accent); font-weight: 500; }
 
-  /* TRIALS */
+  /* TRIAL LAYOUT ENGINE */
   .trial-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
   .trial-card {
     background: var(--bg3);
@@ -580,20 +581,20 @@
   }
   .trial-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
   .trial-status.eligible { background: var(--accent); }
-  .trial-status.partial  { background: var(--accent3); }
+  .trial-status.partial { background: var(--accent3); }
   .trial-info { flex: 1; }
-  .trial-name  { font-size: 12px; color: var(--text); font-weight: 500; margin-bottom: 2px; }
-  .trial-id    { font-family: var(--sans); font-size: 9px; color: var(--accent2); }
+  .trial-name { font-size: 12px; color: var(--text); font-weight: 500; margin-bottom: 2px; }
+  .trial-id { font-family: var(--sans); font-size: 9px; color: var(--accent2); }
   .trial-match { font-family: var(--sans); font-size: 10px; color: var(--muted); }
 
-  /* SAFETY ALERT */
+  /* NOTIFICATIONS & SAFETY ALERTS */
   .safety-alert {
-    background: rgba(220,38,38,0.04);
-    border: 0.5px solid rgba(220,38,38,0.15);
+    background: rgba(248,113,113,0.04);
+    border: 0.5px solid rgba(248,113,113,0.15);
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 11px;
-    color: #B91C1C;
+    color: #fca5a5;
     display: flex;
     gap: 8px;
     align-items: flex-start;
@@ -601,7 +602,7 @@
   }
   .alert-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
-  /* FOOTER */
+  /* FOOTER INTERACTION ACTIONS */
   .signoff-bar {
     border-top: 0.5px solid var(--border);
     padding: 12px 20px;
@@ -629,15 +630,15 @@
     transition: all 0.15s; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;
     user-select: none;
   }
-  .btn-ghost   { border-color: var(--border2); color: var(--muted); background: transparent; }
+  .btn-ghost { border-color: var(--border2); color: var(--muted); background: transparent; }
   .btn-ghost:hover { border-color: var(--text); color: var(--text); background: var(--bg3); }
-  .btn-primary { border-color: rgba(22,163,74,0.3); color: var(--accent); background: rgba(22,163,74,0.06); }
-  .btn-primary:hover { background: rgba(22,163,74,0.12); border-color: var(--accent); }
+  .btn-primary { border-color: rgba(74,222,128,0.3); color: var(--accent); background: rgba(74,222,128,0.06); }
+  .btn-primary:hover { background: rgba(74,222,128,0.14); border-color: var(--accent); }
 
-  /* MODAL */
+  /* MODAL ENGINE OVERLAYS */
   .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(15,25,50,0.4); backdrop-filter: blur(4px);
+    background: rgba(5,7,8,0.85); backdrop-filter: blur(4px);
     display: flex; align-items: center; justify-content: center; z-index: 9999;
     opacity: 0; pointer-events: none; transition: opacity 0.2s ease-in-out;
   }
@@ -645,43 +646,42 @@
   .modal-box {
     background: var(--bg2); border: 0.5px solid var(--border2);
     width: 100%; max-width: 460px; border-radius: 12px; padding: 24px;
-    box-shadow: 0 32px 64px rgba(15,25,50,0.15);
+    box-shadow: 0 32px 64px rgba(0,0,0,0.6);
   }
   .modal-title { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
-  .modal-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
+  .modal-desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
 
-  /* SUB-VIEWS */
+  /* SUB-VIEW UNIQUE WORKSPACE LAYOUTS */
   .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px; flex: 1; overflow-y: auto; }
   .dashboard-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; overflow: hidden; }
   .card-header-mono { font-family: var(--sans); font-size: 10px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
-
-  /* GENOMIC TABLE */
+  
+  /* GENOMIC SEQUENCING TABLES */
   .genomic-table { width: 100%; border-collapse: collapse; font-size: 12px; }
   .genomic-table th { font-family: var(--sans); font-size: 10px; color: var(--muted); text-align: left; padding: 6px 8px; border-bottom: 0.5px solid var(--border); }
-  .genomic-table td { padding: 8px; border-bottom: 0.5px solid rgba(15,25,50,0.04); }
-
-  /* IMAGING */
-  .imaging-container { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #EEF1F6; border-radius: 8px; padding: 16px; flex: 1; min-height: 200px; border: 0.5px solid var(--border); position: relative; }
+  .genomic-table td { padding: 8px; border-bottom: 0.5px solid rgba(255,255,255,0.03); }
+  
+  /* IMAGING SIMULATOR LAYER */
+  .imaging-container { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #07090b; border-radius: 8px; padding: 16px; flex: 1; min-height: 200px; border: 0.5px solid var(--border); position: relative; }
   .dicom-slider { width: 100%; -webkit-appearance: none; background: var(--bg3); height: 4px; border-radius: 2px; outline: none; margin-top: 14px; }
   .dicom-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--accent2); cursor: pointer; }
 
-  /* BRIEF DOCUMENT */
-  .brief-document { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; margin: 20px; padding: 24px; flex: 1; overflow-y: auto; line-height: 1.6; font-size: 13px; color: #374151; }
+  /* PRESENTATION TEXT WORKSPACE */
+  .brief-document { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; margin: 20px; padding: 24px; flex: 1; overflow-y: auto; line-height: 1.6; font-size: 13px; color: #ced4ce; }
   .brief-document h3 { font-family: var(--serif); font-size: 18px; color: var(--text); font-weight: 400; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 0.5px solid var(--border); }
   .brief-meta-strip { display: flex; gap: 16px; font-family: var(--sans); font-size: 10px; color: var(--accent2); margin-bottom: 16px; }
 
-  /* TOAST */
+  /* TOASTER ALERTS */
   #toast-notification {
-    position: fixed; bottom: 32px; right: 32px; background: var(--bg2);
+    position: fixed; bottom: 32px; right: 32px; background: var(--bg3);
     border: 0.5px solid var(--accent); border-radius: 8px; padding: 12px 18px;
     font-family: var(--sans); font-size: 11px; color: var(--text);
-    display: flex; align-items: center; gap: 10px;
-    box-shadow: 0 16px 32px rgba(15,25,50,0.12);
+    display: flex; align-items: center; gap: 10px; box-shadow: 0 16px 32px rgba(0,0,0,0.5);
     transform: translateY(100px); opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 10000;
   }
   #toast-notification.show { transform: translateY(0); opacity: 1; }
 
-  /* EMPTY STATE */
+  /* FIX 2: Empty state overlay shown before file is loaded */
   #empty-state-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -696,13 +696,15 @@
     pointer-events: none;
   }
 
-  #empty-state-overlay.hidden { display: none; }
+  #empty-state-overlay.hidden {
+    display: none;
+  }
 
   .empty-icon {
     width: 64px; height: 64px;
     border-radius: 16px;
-    background: rgba(22,163,74,0.06);
-    border: 0.5px solid rgba(22,163,74,0.2);
+    background: rgba(74,222,128,0.06);
+    border: 0.5px solid rgba(74,222,128,0.2);
     display: flex; align-items: center; justify-content: center;
     font-size: 28px;
     color: var(--accent);
@@ -717,7 +719,7 @@
   }
 
   .empty-sub {
-    font-family: var(--sans);
+    font-family: var(-sans);
     font-size: 11px;
     color: var(--muted);
     line-height: 1.7;
@@ -756,7 +758,8 @@
       <div class="patient-meta" id="sidebar-patient-meta">Import EHR record to begin</div>
     </div>
     
-    <div style="margin-top: 12px; padding: 10px; background: rgba(15,25,50,0.03); border: 1px dashed var(--border2); border-radius: 6px; margin: 12px 14px 0;">
+    <!-- Drop-in File Upload Element -->
+    <div style="margin-top: 12px; padding: 10px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 6px; margin: 12px 14px 0;">
       <label for="patient-file-picker" style="font-family: var(--sans); font-size: 10px; color: var(--muted); display: block; margin-bottom: 6px; text-transform: uppercase;">Import EHR Patient JSON Record</label>
       <input type="file" id="patient-file-picker" accept=".json" onchange="handlePatientFileUpload(event)" style="font-size: 11px; color: var(--muted); width: 100%;">
     </div>
@@ -785,6 +788,7 @@
 
   <div class="view-container">
 
+    <!-- FIX 2: Empty state shown until a patient file is uploaded -->
     <div id="empty-state-overlay">
       <div class="empty-icon"><i class="ti ti-file-upload"></i></div>
       <div class="empty-title">No Patient Loaded</div>
@@ -811,7 +815,9 @@
             <div class="panel-header-title">Matched cohorts</div>
             <div class="panel-header-count" id="panel-match-count">0 matches</div>
           </div>
-          <div class="case-list" id="case-cards-container"></div>
+          <div class="case-list" id="case-cards-container">
+            <!-- Empty until file uploaded -->
+          </div>
         </div>
 
         <div class="panel-right">
@@ -826,17 +832,17 @@
             <div class="radar-wrap">
               <svg class="radar-svg" width="150" height="150" viewBox="0 0 160 160">
                 <g transform="translate(80,80)">
-                  <polygon points="0,-66 57,-33 57,33 0,66 -57,33 -57,-33" fill="none" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" fill="none" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <polygon id="radar-shape-match" points="0,0 0,0 0,0 0,0 0,0 0,0" fill="rgba(2,132,199,0.08)" stroke="#0284C7" stroke-width="1"/>
-                  <polygon points="0,-60 54,-27 51,32 -2,62 -52,30 -52,-28" fill="none" stroke="#16A34A" stroke-width="1.2" stroke-dasharray="2,2"/>
-                  <line x1="0" y1="-66" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <line x1="57" y1="-33" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <line x1="57" y1="33" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <line x1="0" y1="66" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <line x1="-57" y1="33" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
-                  <line x1="-57" y1="-33" x2="0" y2="0" stroke="rgba(15,25,50,0.07)" stroke-width="0.5"/>
+                  <polygon points="0,-66 57,-33 57,33 0,66 -57,33 -57,-33" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <polygon id="radar-shape-match" points="0,0 0,0 0,0 0,0 0,0 0,0" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" stroke-width="1"/>
+                  <polygon points="0,-60 54,-27 51,32 -2,62 -52,30 -52,-28" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-dasharray="2,2"/>
+                  <line x1="0" y1="-66" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="57" y1="-33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="57" y1="33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="0" y1="66" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="-57" y1="33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+                  <line x1="-57" y1="-33" x2="0" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
                 </g>
               </svg>
               <div class="radar-legend">
@@ -867,13 +873,13 @@
             <div id="treatment-cards-injection">
               <div style="padding: 24px; font-family: var(--sans); font-size: 11px; color: var(--muted); text-align: center;">Upload a patient EHR file to view treatment recommendations</div>
             </div>
-            <div id="ai-rationale-block" style="margin-top:16px; background:var(--bg3); border:0.5px solid rgba(22,163,74,0.2); border-radius:10px; padding:14px 16px; display:none;">
+            <div id="ai-rationale-block" style="margin-top:16px; background:var(--bg3); border:0.5px solid rgba(74,222,128,0.2); border-radius:10px; padding:14px 16px; display:none;">
               <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
                 <div class="logo-dot"></div>
                 <span style="font-family:var(--sans); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent);">Oncopilot AI Rationale</span>
                 <span id="ai-rationale-spinner" style="font-family:var(--sans); font-size:9px; color:var(--muted); margin-left:auto;">Generating...</span>
               </div>
-              <div id="ai-rationale-text" style="font-size:12px; color:#374151; line-height:1.7; white-space:pre-wrap;"></div>
+              <div id="ai-rationale-text" style="font-size:12px; color:#ced4ce; line-height:1.7; white-space:pre-wrap;"></div>
             </div>
           </div>
 
@@ -934,9 +940,9 @@
         <div class="dashboard-card" style="grid-column: span 2;">
           <div class="card-header-mono"><i class="ti ti-git-commit"></i>Locus Variant Visual Mapping Model (<span id="gv-locus-label">—</span>)</div>
           <div style="flex: 1; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
-            <svg width="100%" height="40" style="background: rgba(15,25,50,0.03); border-radius: 6px; border: 0.5px solid var(--border)">
-              <line x1="10%" y1="20" x2="90%" y2="20" stroke="rgba(15,25,50,0.15)" stroke-width="4" stroke-linecap="round"/>
-              <circle id="gv-locus-dot" cx="35%" cy="20" r="0" fill="var(--accent)" stroke="var(--bg2)" stroke-width="1.5"/>
+            <svg width="100%" height="40" style="background: rgba(255,255,255,0.02); border-radius: 6px; border: 0.5px solid var(--border)">
+              <line x1="10%" y1="20" x2="90%" y2="20" stroke="rgba(255,255,255,0.2)" stroke-width="4" stroke-linecap="round"/>
+              <circle id="gv-locus-dot" cx="35%" cy="20" r="0" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.5"/>
             </svg>
             <div id="gv-hotspot" style="position: absolute; top: 65px; left: 32%; font-family: var(--sans); font-size: 9px; color: var(--muted);">—</div>
           </div>
@@ -950,10 +956,10 @@
         <div style="width: 340px; border-right: 0.5px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 16px;">
           <div style="font-family: var(--sans); font-size: 10px; text-transform: uppercase; color: var(--muted);">DICOM Volumetric Rendering Slices</div>
           <div class="imaging-container">
-            <svg width="160" height="160" viewBox="0 0 100 100" style="background:#DDE3EE; border-radius: 50%;">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(15,25,50,0.15)" stroke-width="1"/>
-              <ellipse cx="50" cy="50" rx="35" ry="25" fill="none" stroke="rgba(15,25,50,0.2)" stroke-width="0.7"/>
-              <circle id="dicom-nodule-mesh" cx="54" cy="42" r="0" fill="rgba(2,132,199,0.25)" stroke="var(--accent2)" stroke-width="1" stroke-dasharray="1,1"/>
+            <svg width="160" height="160" viewBox="0 0 100 100" style="background:#000; border-radius: 50%;">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <ellipse cx="50" cy="50" rx="35" ry="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/>
+              <circle id="dicom-nodule-mesh" cx="54" cy="42" r="0" fill="rgba(34,211,238,0.25)" stroke="var(--accent2)" stroke-width="1" stroke-dasharray="1,1"/>
             </svg>
             <input type="range" class="dicom-slider" id="dicom-slice-ranger" min="10" max="60" value="38" oninput="updateDicomSimulator(this.value)">
             <div style="display: flex; justify-content: space-between; width: 100%; font-family: var(--sans); font-size: 9px; color: var(--muted); margin-top: 8px;">
@@ -1019,10 +1025,17 @@
   let selectedActiveCaseIndex = 0;
   let currentModalActionType = '';
   let patientLoaded = false;
+
+  // Target context — starts empty, populated after file upload
   let targetPatientContext = null;
+
   const configurationWeights = { "pathology": 25.0, "genomics": 25.0, "imaging": 25.0, "clinical": 25.0 };
 
-  window.addEventListener('DOMContentLoaded', () => { showEmptyState(); });
+  /* FIX 2: On load, do NOT run similarity search. Just show empty state. */
+  window.addEventListener('DOMContentLoaded', () => {
+    // Nothing runs automatically — user must upload a file first
+    showEmptyState();
+  });
 
   function showEmptyState() {
     const overlay = document.getElementById('empty-state-overlay');
@@ -1036,16 +1049,26 @@
     patientLoaded = true;
   }
 
+  /* CORE NETWORKING FUNCTION */
   async function runLiveSimilaritySearch() {
     if (!targetPatientContext) return;
+
     try {
+      console.log("📡 Querying OncoPilot Core Similarity Engine on Port 8001...");
       const response = await fetch('http://127.0.0.1:8001/api/match', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patient: targetPatientContext, weights: configurationWeights })
+        body: JSON.stringify({
+          patient: targetPatientContext,
+          weights: configurationWeights
+        })
       });
+
       if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+      
       const backendData = await response.json();
+      console.log("✅ Top-5 Matches Loaded Successfully:", backendData);
+
       const radarShapes = [
         '0,-62 52,-26 50,30 -4,60 -54,28 -50,-30',
         '0,-55 42,-22 45,22 -2,52 -45,22 -40,-25',
@@ -1053,6 +1076,7 @@
         '0,-40 35,-30 38,18 -15,38 -32,25 -35,-32',
         '0,-35 48,-15 30,12 -25,32 -28,30 -25,-40'
       ];
+
       mockDatasetTCGACases = backendData.map((caseItem, idx) => ({
         id: caseItem.patient_id,
         similarity: `${caseItem.similarity_score}%`,
@@ -1065,26 +1089,42 @@
         oneYearSurv: `${Math.min(95, Math.floor(caseItem.similarity_score + 10))}%`,
         crRate: `${Math.max(10, Math.floor(caseItem.similarity_score - 40))}%`,
         points: radarShapes[idx] || radarShapes[0],
-        metrics: { genomic: `${Math.floor(caseItem.similarity_score * 0.98)}%`, staging: `${Math.floor(caseItem.similarity_score * 0.95)}%`, pathology: `${Math.floor(caseItem.similarity_score * 0.92)}%`, clinical: `${Math.floor(caseItem.similarity_score * 0.88)}%` },
+        metrics: { 
+          genomic: `${Math.floor(caseItem.similarity_score * 0.98)}%`, 
+          staging: `${Math.floor(caseItem.similarity_score * 0.95)}%`, 
+          pathology: `${Math.floor(caseItem.similarity_score * 0.92)}%`, 
+          clinical: `${Math.floor(caseItem.similarity_score * 0.88)}%` 
+        },
         params: caseItem.parameters,
-        drugs: [{ type: 'Rx', name: caseItem.treatment_history, tags: [caseItem.guideline_citation, 'Evidence Grounded Match'], meta: 'Continuous localized medical administration workflow routine management optimization logs tracking parameters.' }],
-        trials: [{ status: 'eligible', name: 'LAURA Trial Maintenance Vector Infrastructure Integration Strategy', id: 'NCT03521154', match: 'Explicit clinical eligibility configuration thresholds met.' }]
+        drugs: [
+          { type: 'Rx', name: caseItem.treatment_history, tags: [caseItem.guideline_citation, 'Evidence Grounded Match'], meta: 'Continuous localized medical administration workflow routine management optimization logs tracking parameters.' }
+        ],
+        trials: [
+          { status: 'eligible', name: 'LAURA Trial Maintenance Vector Infrastructure Integration Strategy', id: 'NCT03521154', match: 'Explicit clinical eligibility configuration thresholds met.' }
+        ]
       }));
+
+      // Update badge and match count
       const badgeEl = document.getElementById('badge-matches');
       if (badgeEl) badgeEl.innerText = mockDatasetTCGACases.length;
       const countEl = document.getElementById('panel-match-count');
       if (countEl) countEl.innerText = `${mockDatasetTCGACases.length} matches`;
+
       generateCaseCardsSidebarList();
       renderActiveCaseStateWorkspace();
       hideEmptyState();
+
     } catch (err) {
       console.error("❌ Backend Connection Failed:", err);
       const container = document.getElementById('case-cards-container');
-      if (container) container.innerHTML = '<div style="padding:16px; font-family:var(--sans); font-size:10px; color:var(--red); line-height:1.6;">Backend not reachable.<br>Run: python app.py<br>Then reload.</div>';
-      hideEmptyState();
+      if (container) {
+        container.innerHTML = '<div style="padding:16px; font-family:var(--mono); font-size:10px; color:var(--red); line-height:1.6;">Backend not reachable.<br>Run: python app.py<br>Then reload.</div>';
+      }
+      hideEmptyState(); // still hide overlay so user sees the error
     }
   }
 
+  /* VIEWS ROUTING */
   function routeToView(targetViewId, clickedNavItemElement) {
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
     clickedNavItemElement.classList.add('active');
@@ -1092,27 +1132,32 @@
     document.getElementById(targetViewId).classList.add('view-active');
   }
 
+  /* SIDEBAR CASE CARDS */
   function generateCaseCardsSidebarList() {
     const parentContainer = document.getElementById('case-cards-container');
     if (!parentContainer) return;
     parentContainer.innerHTML = '';
     if (!mockDatasetTCGACases || mockDatasetTCGACases.length === 0) return;
+    
     mockDatasetTCGACases.forEach((caseObject, index) => {
       const activeStateSelectionClass = index === selectedActiveCaseIndex ? 'selected' : '';
-      parentContainer.insertAdjacentHTML('beforeend', `
+      const constructedHtmlCard = `
         <div class="case-card ${activeStateSelectionClass}" onclick="selectActiveCaseIndexHandler(${index})">
           <div class="case-card-top">
             <div class="case-id">${caseObject.id}</div>
             <div class="sim-score">${caseObject.similarity}</div>
           </div>
           <div class="sim-bar-track"><div class="sim-bar-fill" style="width:${caseObject.similarity}"></div></div>
-          <div class="param-dots">${caseObject.params ? caseObject.params.map(p => `<div class="param-dot ${p.score}"></div>`).join('') : ''}</div>
+          <div class="param-dots">
+            ${caseObject.params ? caseObject.params.map(p => `<div class="param-dot ${p.score}"></div>`).join('') : ''}
+          </div>
           <div class="case-outcome">
             <span class="${caseObject.outcomeClass}">${caseObject.outcome} on Therapy</span>
             <span>OS ${caseObject.os}</span>
           </div>
         </div>
-      `);
+      `;
+      parentContainer.insertAdjacentHTML('beforeend', constructedHtmlCard);
     });
   }
 
@@ -1123,79 +1168,125 @@
     showToastNotification('case-switch');
   }
 
+  /* RENDER ACTIVE CASE */
   function renderActiveCaseStateWorkspace() {
     const activeCase = mockDatasetTCGACases[selectedActiveCaseIndex];
     if (!activeCase) return;
+
     const radarShape = document.getElementById('radar-shape-match');
     if (radarShape) radarShape.setAttribute('points', activeCase.points);
+    
     const radarTitle = document.getElementById('radar-legend-title');
     if (radarTitle) radarTitle.innerText = `${activeCase.id} vs Active Patient Metrics Verification`;
+    
     const metricsContainer = document.getElementById('radar-metrics-subtext');
     if (metricsContainer) {
       metricsContainer.innerHTML = Object.entries(activeCase.metrics).map(([key, value]) => `
-        <div style="display:flex; justify-content:space-between; font-family:var(--sans); font-size:10px;">
+        <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px;">
           <span style="color:var(--muted); text-transform:capitalize;">${key}</span>
           <span style="color:var(--accent);">${value}</span>
-        </div>`).join('');
+        </div>
+      `).join('');
     }
+
     const statsContainer = document.getElementById('similarity-stats-row');
     if (statsContainer) {
       statsContainer.innerHTML = `
         <div class="stat-card"><div class="stat-label">Overall Alignment Sim.</div><div class="stat-val" style="color:var(--accent);">${activeCase.similarity}</div></div>
         <div class="stat-card"><div class="stat-label">Feature Congruence Vector</div><div class="stat-val">${activeCase.matchedParams}</div></div>
         <div class="stat-card"><div class="stat-label">Historical Event Log Outcome</div><div class="stat-val" style="color:var(--accent); font-size:14px; margin-top:2px;">${activeCase.outcome}</div><div class="stat-unit">${activeCase.outcomeDesc}</div></div>
-        <div class="stat-card"><div class="stat-label">Verified Historical Over-Survival</div><div class="stat-val">${activeCase.os}</div></div>`;
+        <div class="stat-card"><div class="stat-label">Verified Historical Over-Survival</div><div class="stat-val">${activeCase.os}</div></div>
+      `;
     }
+
     const headerTitle = document.getElementById('param-table-case-header');
     if (headerTitle) headerTitle.innerText = activeCase.id;
+    
     const tableRowsContainer = document.getElementById('param-rows-injection');
     if (tableRowsContainer) {
       tableRowsContainer.innerHTML = activeCase.params.map((p, i) => {
         const boundaryCheckStyle = i === activeCase.params.length - 1 ? 'border-bottom:none' : '';
         const systemIndicatorGlyph = p.score === 'green' ? '✓' : p.score === 'amber' ? '~' : '✗';
-        const colorIndicatorOutput = { green: '#16A34A', amber: '#D97706', red: '#DC2626' }[p.score];
-        return `<div style="display:flex; gap:12px; align-items:center; padding:8px 14px; border-bottom:0.5px solid rgba(15,25,50,0.04); font-size:12px; ${boundaryCheckStyle}">
-          <div style="width:6px; height:6px; border-radius:50%; background:${colorIndicatorOutput}; flex-shrink:0;"></div>
-          <span style="flex:1; color:var(--text);">${p.name}</span>
-          <span style="font-family:var(--sans); font-size:10px; color:var(--muted);">${p.patient}</span>
-          <span style="width:90px; text-align:right; font-family:var(--sans); font-size:10px; color:var(--muted);">${p.match}</span>
-          <span style="width:36px; text-align:right; font-family:var(--sans); font-size:10px; color:${colorIndicatorOutput}">${systemIndicatorGlyph}</span>
-        </div>`;
+        const colorIndicatorOutput = { green: '#4ade80', amber: '#f59e0b', red: '#f87171' }[p.score];
+        return `
+          <div style="display:flex; gap:12px; align-items:center; padding:8px 14px; border-bottom:0.5px solid rgba(255,255,255,0.03); font-size:12px; ${boundaryCheckStyle}">
+            <div style="width:6px; height:6px; border-radius:50%; background:${colorIndicatorOutput}; flex-shrink:0;"></div>
+            <span style="flex:1; color:var(--text);">${p.name}</span>
+            <span style="font-family:var(--mono); font-size:10px; color:#7a8a7e;">${p.patient}</span>
+            <span style="width:90px; text-align:right; font-family:var(--mono); font-size:10px; color:#7a8a7e;">${p.match}</span>
+            <span style="width:36px; text-align:right; font-family:var(--mono); font-size:10px; color:${colorIndicatorOutput}">${systemIndicatorGlyph}</span>
+          </div>
+        `;
       }).join('');
     }
+
     const treatmentTargetContainer = document.getElementById('treatment-cards-injection');
     if (treatmentTargetContainer) {
-      treatmentTargetContainer.innerHTML = `<div class="treatment-section"><div class="treatment-section-label">AI Consensus Recommended Protocol Pipeline Options</div>${activeCase.drugs.map(d => `<div class="drug-card"><div class="drug-icon">${d.type}</div><div class="drug-info"><div class="drug-name">${d.name}${d.tags.map(t => `<span class="evidence-tag"><div class="evidence-dot"></div>${t}</span>`).join('')}</div><div class="drug-meta">${d.meta}</div></div></div>`).join('')}</div>`;
+      treatmentTargetContainer.innerHTML = `
+        <div class="treatment-section">
+          <div class="treatment-section-label">AI Consensus Recommended Protocol Pipeline Options</div>
+          ${activeCase.drugs.map(d => `
+            <div class="drug-card">
+              <div class="drug-icon">${d.type}</div>
+              <div class="drug-info">
+                <div class="drug-name">${d.name}
+                  ${d.tags.map(t => `<span class="evidence-tag"><div class="evidence-dot"></div>${t}</span>`).join('')}
+                </div>
+                <div class="drug-meta">${d.meta}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
     }
+
     const trialTargetContainer = document.getElementById('trial-cards-injection');
     if (trialTargetContainer) {
       if (activeCase.trials.length === 0) {
-        trialTargetContainer.innerHTML = `<p style="font-size:12px; color:var(--muted); font-family:var(--sans); padding:10px;">Zero verified clinical trials matched within target parameters.</p>`;
+        trialTargetContainer.innerHTML = `<p style="font-size:12px; color:var(--muted); font-family:var(--mono); padding:10px;">Zero verified clinical trials matched within target parameters.</p>`;
       } else {
-        trialTargetContainer.innerHTML = activeCase.trials.map(t => `<div class="trial-card"><div class="trial-status ${t.status}"></div><div class="trial-info"><div class="trial-name">${t.name}</div><div style="display:flex; gap:10px; margin-top:3px;"><div class="trial-id">${t.id}</div><div class="trial-match">${t.match}</div></div></div><span class="evidence-tag"><div class="evidence-dot"></div>${t.status}</span></div>`).join('');
+        trialTargetContainer.innerHTML = activeCase.trials.map(t => `
+          <div class="trial-card">
+            <div class="trial-status ${t.status}"></div>
+            <div class="trial-info">
+              <div class="trial-name">${t.name}</div>
+              <div style="display:flex; gap:10px; margin-top:3px;">
+                <div class="trial-id">${t.id}</div><div class="trial-match">${t.match}</div>
+              </div>
+            </div>
+            <span class="evidence-tag"><div class="evidence-dot"></div>${t.status}</span>
+          </div>
+        `).join('');
       }
     }
+
     const medianLabel = document.getElementById('prog-median-label');
     if (medianLabel) medianLabel.innerText = `Median Expected Survival: ${activeCase.os}`;
+    
     const captionText = document.getElementById('prog-caption-text');
     if (captionText) captionText.innerHTML = `Statistical cohort extrapolation over <strong>${activeCase.id}</strong> indicates tight clustering. Median PFS <strong>${activeCase.pfs}</strong> with 1-year stability projection.`;
+    
     const trackingPct = parseInt(activeCase.similarity) - 45;
     const rangeBar = document.getElementById('prog-range-bar');
     const medianTick = document.getElementById('prog-median-tick');
     if (rangeBar) { rangeBar.style.left = `${trackingPct - 15}%`; rangeBar.style.width = `${100 - trackingPct}%`; }
     if (medianTick) medianTick.style.left = `${trackingPct}%`;
+
     const prognosisStatsContainer = document.getElementById('prognosis-stats-row');
     if (prognosisStatsContainer) {
       prognosisStatsContainer.innerHTML = `
         <div class="stat-card"><div class="stat-label">Target Median OS</div><div class="stat-val">${activeCase.os}</div></div>
         <div class="stat-card"><div class="stat-label">1-Year Surv. Probability</div><div class="stat-val" style="color:var(--accent);">${activeCase.oneYearSurv}</div></div>
         <div class="stat-card"><div class="stat-label">Calculated PFS Benchmark</div><div class="stat-val">${activeCase.pfs}</div></div>
-        <div class="stat-card"><div class="stat-label">Complete Response Likelihood</div><div class="stat-val" style="color:var(--accent);">${activeCase.crRate}</div></div>`;
+        <div class="stat-card"><div class="stat-label">Complete Response Likelihood</div><div class="stat-val" style="color:var(--accent);">${activeCase.crRate}</div></div>
+      `;
     }
+
     renderTumorBoardBrief(activeCase);
     renderSOAPNote(activeCase);
   }
 
+  /* TUMOR BOARD BRIEF */
   function renderTumorBoardBrief(c) {
     const el = document.getElementById('tumorboard-brief-injection');
     if (!el || !targetPatientContext) return;
@@ -1212,11 +1303,13 @@
       <p style="margin-bottom:14px;"><strong>Molecular Profile:</strong> NGS panel identified <strong>${p.genomics?.driver_mutation || '—'}</strong> as the primary driver alteration. Secondary mutation: ${p.genomics?.secondary_mutation || 'None'}. TMB: ${p.genomics?.tmb || '—'} mut/Mb. PD-L1 expression: ${p.genomics?.pdl1_percent || '—'}%.</p>
       <p style="margin-bottom:14px;"><strong>Cohort Match Analysis:</strong> Multi-modal similarity engine identified <strong>${c.id}</strong> as the top historical match at <strong>${c.similarity}</strong> across 20 parameters. Reference case treated with <em>${c.drugs[0]?.name || '—'}</em>, achieving ${c.outcomeDesc} with OS ${c.os} and PFS ${c.pfs}.</p>
       <p style="margin-bottom:14px;"><strong>Clinical Question for Board:</strong> Validate first-line treatment selection and assess candidacy for clinical trials based on molecular and staging profile above.</p>
-      <div style="background:rgba(22,163,74,0.04); border:0.5px solid rgba(22,163,74,0.15); border-radius:8px; padding:12px; font-family:var(--sans); font-size:10px; color:var(--accent); margin-top:8px;">
+      <div style="background:rgba(74,222,128,0.04); border:0.5px solid rgba(74,222,128,0.15); border-radius:8px; padding:12px; font-family:var(--mono); font-size:10px; color:var(--accent); margin-top:8px;">
         ⚠ AI-generated draft. Requires clinician review before tumor board submission.
-      </div>`;
+      </div>
+    `;
   }
 
+  /* SOAP NOTE */
   function renderSOAPNote(c) {
     const el = document.getElementById('soap-note-textarea');
     if (!el || !targetPatientContext) return;
@@ -1238,15 +1331,18 @@
     if (el) navigator.clipboard.writeText(el.value).then(() => showToastNotification('chart-clipboard'));
   }
 
+  /* AI RATIONALE */
   async function generateAIRationale(activeCase) {
     if (!activeCase || !targetPatientContext) return;
     const block = document.getElementById('ai-rationale-block');
     const spinner = document.getElementById('ai-rationale-spinner');
     const textEl = document.getElementById('ai-rationale-text');
     if (!block || !textEl) return;
+
     block.style.display = 'block';
     spinner.style.display = 'inline';
     textEl.innerText = '';
+
     const p = targetPatientContext;
     const prompt = `You are Oncopilot AI, a clinical decision support system for oncologists. You are analyzing a lung cancer case and a historically matched cohort case. Provide a concise clinical rationale (3-4 short paragraphs) covering:
 1. Why this historical case is a strong molecular and clinical match
@@ -1265,6 +1361,7 @@ Matched Case: ${activeCase.id} (${activeCase.similarity} similarity)
 - Guideline: ${activeCase.drugs[0]?.tags?.[0]}
 
 Write in clinical but clear language. Be direct. No bullet points — flowing paragraphs. Do not include disclaimers about being an AI.`;
+
     try {
       const response = await fetch('http://127.0.0.1:8001/api/ai-rationale', {
         method: 'POST',
@@ -1280,6 +1377,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     }
   }
 
+  /* TAB SWITCHER */
   function switchSubTab(clickedTabElement, targetSubTabContentContainerId) {
     const parentContainer = clickedTabElement.closest('.panel-right');
     if (!parentContainer) return;
@@ -1290,6 +1388,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     if (targetBody) targetBody.classList.remove('hidden');
   }
 
+  /* DICOM SIMULATOR */
   function updateDicomSimulator(sliderInputValueCode) {
     const sliceLbl = document.getElementById('dicom-slice-lbl');
     if (sliceLbl) sliceLbl.innerText = `${sliderInputValueCode} mm`;
@@ -1302,6 +1401,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     if (necrMetric) necrMetric.innerText = `${Math.floor(10 + (normalizedRadius * 1.5))}%`;
   }
 
+  /* MODAL */
   function triggerModal(modalTargetTemplateActionScope) {
     currentModalActionType = modalTargetTemplateActionScope;
     const modalBoxInjectionArea = document.getElementById('modal-content-injection');
@@ -1311,13 +1411,19 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
       modalBoxInjectionArea.innerHTML = `
         <h3 class="modal-title">Initialize PDF Extraction Diagnostic Framework</h3>
         <p class="modal-desc">This pipeline packages all grounding vectors, next-generation tumor analytics variant tracks, and radiographic segmentations into a cryptographically secured diagnostic asset report.</p>
-        <div style="font-family:var(--sans); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border)">Target Path Asset Archive File: oncopilot_report_PT-IMPORTED.pdf</div>`;
+        <div style="font-family:var(--mono); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border)">
+          Target Path Asset Archive File: oncopilot_report_PT-IMPORTED.pdf
+        </div>
+      `;
       modalPrimaryActionConfirmBtn.innerText = "Compile & Save Document";
     } else if (modalTargetTemplateActionScope === 'sign') {
       modalBoxInjectionArea.innerHTML = `
         <h3 class="modal-title">Authorize Cryptographic Signature Chart Sign-off Protocol</h3>
         <p class="modal-desc">Your clinical signature credentials token will unlock compilation parameters to inject recommendations logs into the hospital registration database infrastructure.</p>
-        <div style="font-family:var(--sans); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border); color:var(--accent3);">System Action Key Hook: SIG-AUTH-V4-2026</div>`;
+        <div style="font-family:var(--mono); font-size:10px; background:var(--bg3); padding:10px; border-radius:6px; border:0.5px solid var(--border); color:var(--accent3);">
+          System Action Key Hook: SIG-AUTH-V4-2026
+        </div>
+      `;
       modalPrimaryActionConfirmBtn.innerText = "Execute Cryptographic Attestation Signature";
     }
     const appModal = document.getElementById('global-application-modal');
@@ -1334,6 +1440,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     showToastNotification(currentModalActionType);
   }
 
+  /* TOAST */
   function showToastNotification(actionContextNotificationCode) {
     const toastNotificationBox = document.getElementById('toast-notification');
     const toastInjectedTextContainer = document.getElementById('toast-msg-injection');
@@ -1349,6 +1456,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     setTimeout(() => toastNotificationBox.classList.remove('show'), 4000);
   }
 
+  /* FILE UPLOAD HANDLER */
   function handlePatientFileUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -1358,21 +1466,32 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
         const uploadedPatientData = JSON.parse(e.target.result);
         selectedActiveCaseIndex = 0;
         targetPatientContext = uploadedPatientData;
+
+        // Update sidebar chip
         const nameEl = document.getElementById('sidebar-patient-name');
         const metaEl = document.getElementById('sidebar-patient-meta');
         if (nameEl) nameEl.innerText = 'PT-IMPORTED';
         if (metaEl) metaEl.innerText = (uploadedPatientData.genomics?.driver_mutation || '?') + ' · ' + (uploadedPatientData.clinical?.stage || '?') + ' · PD-L1 ' + (uploadedPatientData.genomics?.pdl1_percent || 0) + '%';
+
+        // Clear stale case data
         mockDatasetTCGACases = [];
         selectedActiveCaseIndex = 0;
         const container = document.getElementById('case-cards-container');
-        if (container) container.innerHTML = '<div style="padding:20px; font-family:var(--sans); font-size:10px; color:var(--muted);">Searching similar cases...</div>';
+        if (container) container.innerHTML = '<div style="padding:20px; font-family:var(--mono); font-size:10px; color:var(--muted);">Searching similar cases...</div>';
+
+        // Update badge to 0 while searching
         const badgeEl = document.getElementById('badge-matches');
         if (badgeEl) badgeEl.innerText = '...';
         const countEl = document.getElementById('panel-match-count');
         if (countEl) countEl.innerText = 'Searching...';
+
+        // Update dynamic views
         renderGenomicView(uploadedPatientData);
         updateImagingView(uploadedPatientData);
+
+        console.log("🚀 File parsed. Sending to Python server...");
         await runLiveSimilaritySearch();
+
       } catch (err) {
         alert("Invalid JSON data schema structure configuration format!");
         console.error("❌ File Processing Failure:", err);
@@ -1381,6 +1500,7 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     reader.readAsText(file);
   }
 
+  /* GENOMIC VIEW */
   function renderGenomicView(p) {
     if (!p) return;
     const driver = p.genomics?.driver_mutation || 'Wild-Type';
@@ -1388,45 +1508,91 @@ Write in clinical but clear language. Be direct. No bullet points — flowing pa
     const tmb = p.genomics?.tmb || 0;
     const pdl1 = p.genomics?.pdl1_percent || 0;
     const cnv = p.genomics?.cnv || 'Diploid';
+
     const geneMap = {
-      'EGFR exon 19 del':   { gene: 'EGFR', alt: 'Exon 19 Deletion',  chrom: 'EGFR Chromosome 7',  hotspot: 'Ex19del hotspot' },
-      'EGFR exon 21 L858R': { gene: 'EGFR', alt: 'p.L858R Missense',  chrom: 'EGFR Chromosome 7',  hotspot: 'L858R hotspot' },
-      'KRAS G12C':          { gene: 'KRAS', alt: 'p.G12C Mutation',   chrom: 'KRAS Chromosome 12', hotspot: 'G12C codon' },
-      'KRAS G12V':          { gene: 'KRAS', alt: 'p.G12V Mutation',   chrom: 'KRAS Chromosome 12', hotspot: 'G12V codon' },
-      'ALK Fusion':         { gene: 'ALK',  alt: 'Gene Fusion (EML4)',chrom: 'ALK Chromosome 2',   hotspot: 'Fusion breakpoint' },
-      'ROS1 Fusion':        { gene: 'ROS1', alt: 'Gene Fusion',       chrom: 'ROS1 Chromosome 6',  hotspot: 'Fusion breakpoint' },
+      'EGFR exon 19 del': { gene: 'EGFR', alt: 'Exon 19 Deletion', chrom: 'EGFR Chromosome 7', hotspot: 'Ex19del hotspot' },
+      'EGFR exon 21 L858R': { gene: 'EGFR', alt: 'p.L858R Missense', chrom: 'EGFR Chromosome 7', hotspot: 'L858R hotspot' },
+      'KRAS G12C': { gene: 'KRAS', alt: 'p.G12C Mutation', chrom: 'KRAS Chromosome 12', hotspot: 'G12C codon' },
+      'KRAS G12V': { gene: 'KRAS', alt: 'p.G12V Mutation', chrom: 'KRAS Chromosome 12', hotspot: 'G12V codon' },
+      'ALK Fusion': { gene: 'ALK', alt: 'Gene Fusion (EML4)', chrom: 'ALK Chromosome 2', hotspot: 'Fusion breakpoint' },
+      'ROS1 Fusion': { gene: 'ROS1', alt: 'Gene Fusion', chrom: 'ROS1 Chromosome 6', hotspot: 'Fusion breakpoint' },
     };
     const info = geneMap[driver] || { gene: 'WT', alt: 'No Driver Detected', chrom: 'Pan-genomic view', hotspot: 'No hotspot' };
     const isWT = !geneMap[driver];
+
     const rowDriver = document.getElementById('gv-row-driver');
-    if (rowDriver) { rowDriver.style.display = ''; rowDriver.innerHTML = `<td style="color:${isWT ? 'var(--muted)' : 'var(--accent)'};">${info.gene}</td><td>${info.alt}</td><td>${isWT ? '--' : Math.floor(38 + tmb) + '%'}</td><td>${isWT ? '<span style="color:var(--muted)">No Driver</span>' : '<span class="evidence-tag">Tier 1 Pathogenic</span>'}</td>`; }
+    if (rowDriver) {
+      rowDriver.style.display = '';
+      rowDriver.innerHTML = `<td style="color:${isWT ? 'var(--muted)' : 'var(--accent)'};">${info.gene}</td><td>${info.alt}</td><td>${isWT ? '--' : Math.floor(38 + tmb) + '%'}</td><td>${isWT ? '<span style="color:var(--muted)">No Driver</span>' : '<span class="evidence-tag">Tier 1 Pathogenic</span>'}</td>`;
+    }
+
     const rowSec = document.getElementById('gv-row-secondary');
-    if (rowSec) { rowSec.style.display = ''; const secAlt = secondary === 'TP53' ? 'p.R273H Missense' : secondary === 'STK11' ? 'Loss of Function' : 'Wildtype'; const secTier = secondary === 'None' ? '<span style="color:var(--muted)">Not Detected</span>' : '<span class="evidence-tag">Tier 1 Pathogenic</span>'; rowSec.innerHTML = `<td style="color:${secondary === 'None' ? 'var(--muted)' : 'var(--text)'};">${secondary === 'None' ? '—' : secondary}</td><td>${secAlt}</td><td>${secondary === 'None' ? '--' : '32%'}</td><td>${secTier}</td>`; }
+    if (rowSec) {
+      rowSec.style.display = '';
+      const secAlt = secondary === 'TP53' ? 'p.R273H Missense' : secondary === 'STK11' ? 'Loss of Function' : 'Wildtype';
+      const secTier = secondary === 'None' ? '<span style="color:var(--muted)">Not Detected</span>' : '<span class="evidence-tag">Tier 1 Pathogenic</span>';
+      rowSec.innerHTML = `<td style="color:${secondary === 'None' ? 'var(--muted)' : 'var(--text)'};">${secondary === 'None' ? '—' : secondary}</td><td>${secAlt}</td><td>${secondary === 'None' ? '--' : '32%'}</td><td>${secTier}</td>`;
+    }
+
     const rowCnv = document.getElementById('gv-row-cnv');
-    if (rowCnv) { rowCnv.style.display = ''; rowCnv.innerHTML = `<td style="color:var(--muted);">CNV</td><td>${cnv}</td><td>--</td><td><span style="color:var(--muted)">${cnv === 'Amplified' ? 'Copy Gain' : 'Diploid'}</span></td>`; }
+    if (rowCnv) {
+      rowCnv.style.display = '';
+      rowCnv.innerHTML = `<td style="color:var(--muted);">CNV</td><td>${cnv}</td><td>--</td><td><span style="color:var(--muted)">${cnv === 'Amplified' ? 'Copy Gain' : 'Diploid'}</span></td>`;
+    }
+
     const rowPdl1 = document.getElementById('gv-row-pdl1');
-    if (rowPdl1) { rowPdl1.style.display = ''; const pdlTier = pdl1 >= 50 ? 'High Expressors' : pdl1 >= 1 ? 'Low Positive' : 'Negative'; rowPdl1.innerHTML = `<td style="color:var(--text);">PD-L1</td><td>CPS Expression</td><td>${pdl1}%</td><td><span class="evidence-tag">${pdlTier}</span></td>`; }
-    const tmbEl = document.getElementById('gv-tmb'); if (tmbEl) tmbEl.innerText = tmb;
+    if (rowPdl1) {
+      rowPdl1.style.display = '';
+      const pdlTier = pdl1 >= 50 ? 'High Expressors' : pdl1 >= 1 ? 'Low Positive' : 'Negative';
+      rowPdl1.innerHTML = `<td style="color:var(--text);">PD-L1</td><td>CPS Expression</td><td>${pdl1}%</td><td><span class="evidence-tag">${pdlTier}</span></td>`;
+    }
+
+    const tmbEl = document.getElementById('gv-tmb');
+    if (tmbEl) tmbEl.innerText = tmb;
+
     const tmbLabel = document.getElementById('gv-tmb-label');
-    if (tmbLabel) { const pct = Math.min(99, Math.round((parseFloat(tmb) / 20) * 100)); const tier = tmb >= 10 ? 'High · Immunotherapy Responsive' : tmb >= 6 ? 'Intermediate Registry' : 'Low · TKI Preferred'; tmbLabel.innerText = `${pct}th Percentile · ${tier}`; tmbLabel.style.color = 'var(--accent)'; tmbLabel.style.background = 'rgba(22,163,74,0.06)'; }
-    const locusEl = document.getElementById('gv-locus-label'); if (locusEl) locusEl.innerText = info.chrom;
-    const hotspotEl = document.getElementById('gv-hotspot'); if (hotspotEl) { hotspotEl.innerText = info.hotspot; hotspotEl.style.color = 'var(--accent)'; }
-    const locusDot = document.getElementById('gv-locus-dot'); if (locusDot) locusDot.setAttribute('r', isWT ? '0' : '6');
+    if (tmbLabel) {
+      const pct = Math.min(99, Math.round((parseFloat(tmb) / 20) * 100));
+      const tier = tmb >= 10 ? 'High · Immunotherapy Responsive' : tmb >= 6 ? 'Intermediate Registry' : 'Low · TKI Preferred';
+      tmbLabel.innerText = `${pct}th Percentile · ${tier}`;
+      tmbLabel.style.color = 'var(--accent)';
+      tmbLabel.style.background = 'rgba(74,222,128,0.06)';
+    }
+
+    const locusEl = document.getElementById('gv-locus-label');
+    if (locusEl) locusEl.innerText = info.chrom;
+
+    const hotspotEl = document.getElementById('gv-hotspot');
+    if (hotspotEl) { hotspotEl.innerText = info.hotspot; hotspotEl.style.color = 'var(--accent)'; }
+
+    const locusDot = document.getElementById('gv-locus-dot');
+    if (locusDot) locusDot.setAttribute('r', isWT ? '0' : '6');
   }
 
+  /* IMAGING VIEW */
   function updateImagingView(p) {
     if (!p) return;
     const sz = p.pathology?.tumor_size_mm || 38;
     const lobe = p.imaging?.lobe || 'Right Upper Lobe';
     const clamp = Math.min(Math.max(sz, 10), 60);
+
     const slider = document.getElementById('dicom-slice-ranger');
     if (slider) { slider.value = clamp; updateDicomSimulator(clamp); }
-    const sliceLbl = document.getElementById('dicom-slice-lbl'); if (sliceLbl) sliceLbl.innerText = `${sz}mm`;
-    const lobeEl = document.getElementById('iv-lobe'); if (lobeEl) lobeEl.innerText = lobe.toLowerCase();
+
+    const sliceLbl = document.getElementById('dicom-slice-lbl');
+    if (sliceLbl) sliceLbl.innerText = `${sz}mm`;
+
+    const lobeEl = document.getElementById('iv-lobe');
+    if (lobeEl) lobeEl.innerText = lobe.toLowerCase();
+
+    // Update imaging summary text
     const summaryEl = document.getElementById('imaging-summary-text');
-    if (summaryEl) { summaryEl.style.color = '#374151'; summaryEl.innerHTML = `Automated deep learning segmentations indicate a primary high-density nodule signature in the <strong style="color:var(--accent2)">${lobe.toLowerCase()}</strong>. Margin characteristics showcase micro-lobulation, directly correlating with high structural similarity matches discovered across the target cohort index.`; }
+    if (summaryEl) {
+      summaryEl.style.color = '#ced4ce';
+      summaryEl.style.fontFamily = 'var(--sans)';
+      summaryEl.innerHTML = `Automated deep learning segmentations indicate a primary high-density nodule signature in the <strong style="color:var(--accent2)">${lobe.toLowerCase()}</strong>. Margin characteristics showcase micro-lobulation, directly correlating with high structural similarity matches discovered across the target cohort index.`;
+    }
   }
 </script>
 </body>
 </html>
-
