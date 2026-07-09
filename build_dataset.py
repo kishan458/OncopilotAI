@@ -3,7 +3,7 @@ import json
 import requests
 import random
 
-def fetch_max_force_gdc_data(num_cases=100):
+def fetch_max_force_gdc_data(num_cases=200):
     """
     Executes a multi-endpoint full-force request to the National Cancer Institute (NCI)
     GDC API to grab maximum authentic clinical, staging, and genomic data fields.
@@ -195,4 +195,5 @@ def fetch_max_force_gdc_data(num_cases=100):
     return True
 
 if __name__ == "__main__":
-    fetch_max_force_gdc_data(100)
+    # Tweak: Changed from 100 to 200 to generate a bigger cohort
+    fetch_max_force_gdc_data(200)
