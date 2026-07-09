@@ -6,7 +6,6 @@ Oncopilot is a hackathon MVP that matches an imported patient record against a h
 
 <p>
   <img src="screenshots/image1.png" alt="BTC Macro Event Engine Dashboard" width="100%">
-  <img src="screenshots/image2.png" alt="BTC Macro Event Engine Dashboard" width="100%">
 </p>
 
 ## Overview
@@ -66,6 +65,10 @@ oncopilot/
 ├── requirements.txt
 └── .env.example                  ← ANTHROPIC_API_KEY
 ```
+
+<p>
+  <img src="screenshots/image2.png" alt="BTC Macro Event Engine Dashboard" width="100%">
+</p>
 
 ## Local Setup
 
