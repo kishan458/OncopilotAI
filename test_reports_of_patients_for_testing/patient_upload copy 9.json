@@ -1,0 +1,41 @@
+{
+  "patient_id": "ONCO-TEST-40",
+  "target_similarity": "40%",
+  "mock_engine_notes": "Early-stage IA, ALK Fusion, completely altered demographic background (Female, Non-Smoker). Minimal overlay.",
+  "pathology": {
+    "subtype": "Adenocarcinoma, NOS",
+    "tumor_grade": "G2",
+    "mitotic_index": "Low",
+    "surgical_margin": "Negative",
+    "tumor_size_mm": 16
+  },
+  "genomics": {
+    "driver_mutation": "ALK Fusion",
+    "secondary_mutation": "None",
+    "tmb": 7.9,
+    "pdl1_percent": 67,
+    "cnv": "Diploid"
+  },
+  "imaging": {
+    "lobe": "Right Upper Lobe",
+    "density": "Part-Solid",
+    "t_stage": "T1",
+    "n_stage": "N0",
+    "m_stage": "M0",
+    "pleural_invasion": false,
+    "metastasis_sites": [
+      "None"
+    ]
+  },
+  "clinical": {
+    "age": 65,
+    "sex": "Female",
+    "smoking_history": "Never Smoked",
+    "ecog_status": 1,
+    "stage": "Stage IA",
+    "prior_lines": 0,
+    "co_morbidities": [
+      "Hypertension"
+    ]
+  }
+}

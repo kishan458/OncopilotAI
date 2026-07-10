@@ -1,0 +1,41 @@
+{
+  "patient_id": "ONCO-TEST-80",
+  "target_similarity": "80%",
+  "mock_engine_notes": "Removed secondary TP53 mutation, modified CT imaging density, swapped secondary co-morbidity.",
+  "pathology": {
+    "subtype": "Adenocarcinoma, NOS",
+    "tumor_grade": "G2",
+    "mitotic_index": "Low",
+    "surgical_margin": "Negative",
+    "tumor_size_mm": 38
+  },
+  "genomics": {
+    "driver_mutation": "KRAS G12C",
+    "secondary_mutation": "None",
+    "tmb": 11.4,
+    "pdl1_percent": 30,
+    "cnv": "Amplified"
+  },
+  "imaging": {
+    "lobe": "Left Lower Lobe",
+    "density": "Part-Solid",
+    "t_stage": "T3",
+    "n_stage": "N2",
+    "m_stage": "M1",
+    "pleural_invasion": true,
+    "metastasis_sites": [
+      "Bone"
+    ]
+  },
+  "clinical": {
+    "age": 71,
+    "sex": "Male",
+    "smoking_history": "Current Smoker",
+    "ecog_status": 1,
+    "stage": "Stage IV",
+    "prior_lines": 0,
+    "co_morbidities": [
+      "Hypertension"
+    ]
+  }
+}

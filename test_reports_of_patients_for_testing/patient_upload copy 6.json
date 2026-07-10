@@ -1,0 +1,41 @@
+{
+  "patient_id": "ONCO-TEST-70",
+  "target_similarity": "70%",
+  "mock_engine_notes": "Maintains Stage IV via Bone met, but drops local T and N stages. Swaps secondary mutation to STK11.",
+  "pathology": {
+    "subtype": "Adenocarcinoma, NOS",
+    "tumor_grade": "G2",
+    "mitotic_index": "Low",
+    "surgical_margin": "Negative",
+    "tumor_size_mm": 34
+  },
+  "genomics": {
+    "driver_mutation": "KRAS G12C",
+    "secondary_mutation": "STK11",
+    "tmb": 9.5,
+    "pdl1_percent": 10,
+    "cnv": "Diploid"
+  },
+  "imaging": {
+    "lobe": "Right Lower Lobe",
+    "density": "Part-Solid",
+    "t_stage": "T2a",
+    "n_stage": "N1",
+    "m_stage": "M1",
+    "pleural_invasion": false,
+    "metastasis_sites": [
+      "Bone"
+    ]
+  },
+  "clinical": {
+    "age": 69,
+    "sex": "Male",
+    "smoking_history": "Former Smoker",
+    "ecog_status": 0,
+    "stage": "Stage IV",
+    "prior_lines": 0,
+    "co_morbidities": [
+      "Hypertension"
+    ]
+  }
+}

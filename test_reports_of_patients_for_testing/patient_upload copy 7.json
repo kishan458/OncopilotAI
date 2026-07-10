@@ -1,0 +1,41 @@
+{
+  "patient_id": "ONCO-TEST-60",
+  "target_similarity": "60%",
+  "mock_engine_notes": "Staging drops out of Stage IV down to Stage IIB. KRAS driver variant shifted from G12C to G12V.",
+  "pathology": {
+    "subtype": "Adenocarcinoma, NOS",
+    "tumor_grade": "G2",
+    "mitotic_index": "Low",
+    "surgical_margin": "Positive",
+    "tumor_size_mm": 40
+  },
+  "genomics": {
+    "driver_mutation": "KRAS G12V",
+    "secondary_mutation": "None",
+    "tmb": 13.4,
+    "pdl1_percent": 70,
+    "cnv": "Diploid"
+  },
+  "imaging": {
+    "lobe": "Right Lower Lobe",
+    "density": "Part-Solid",
+    "t_stage": "T2",
+    "n_stage": "N1",
+    "m_stage": "M0",
+    "pleural_invasion": true,
+    "metastasis_sites": [
+      "None"
+    ]
+  },
+  "clinical": {
+    "age": 57,
+    "sex": "Female",
+    "smoking_history": "Current Smoker",
+    "ecog_status": 1,
+    "stage": "Stage IIB",
+    "prior_lines": 0,
+    "co_morbidities": [
+      "COPD"
+    ]
+  }
+}

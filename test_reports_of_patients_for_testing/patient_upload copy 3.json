@@ -1,0 +1,41 @@
+{
+  "patient_id": "ONCO-TEST-90",
+  "target_similarity": "90%",
+  "mock_engine_notes": "High structural match. Altered lung lobe location and scaled numeric variables.",
+  "pathology": {
+    "subtype": "Adenocarcinoma, NOS",
+    "tumor_grade": "G2",
+    "mitotic_index": "Low",
+    "surgical_margin": "Positive",
+    "tumor_size_mm": 45
+  },
+  "genomics": {
+    "driver_mutation": "KRAS G12C",
+    "secondary_mutation": "TP53",
+    "tmb": 13.5,
+    "pdl1_percent": 20,
+    "cnv": "Amplified"
+  },
+  "imaging": {
+    "lobe": "Left Upper Lobe",
+    "density": "Solid",
+    "t_stage": "T3",
+    "n_stage": "N2",
+    "m_stage": "M1",
+    "pleural_invasion": true,
+    "metastasis_sites": [
+      "Bone"
+    ]
+  },
+  "clinical": {
+    "age": 59,
+    "sex": "Male",
+    "smoking_history": "Heavy Smoker",
+    "ecog_status": 1,
+    "stage": "Stage IV",
+    "prior_lines": 0,
+    "co_morbidities": [
+      "COPD"
+    ]
+  }
+}
